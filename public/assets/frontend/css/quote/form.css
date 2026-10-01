@@ -1,0 +1,528 @@
+/* =========================================================
+   QUOTE REQUEST FORM
+========================================================= */
+
+.quote-form-section,
+.quote-form-section * {
+    box-sizing: border-box;
+}
+
+.quote-form-section {
+    padding: 95px 0;
+
+    background: var(--naksh-bg);
+}
+
+.quote-form-section__grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px,.72fr)
+        minmax(0,1.28fr);
+
+    align-items: start;
+
+    gap: clamp(45px,7vw,90px);
+}
+
+
+/* =========================================================
+   LEFT
+========================================================= */
+
+.quote-form-intro__eyebrow {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 11px;
+
+    color: var(--naksh-orange);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 1.2px;
+}
+
+.quote-form-intro__eyebrow span {
+    width: 29px;
+    height: 2px;
+
+    background: var(--naksh-orange);
+}
+
+.quote-form-intro h2 {
+    margin: 0;
+
+    color: var(--naksh-navy);
+
+    font-size:
+        clamp(31px,3.5vw,48px);
+
+    line-height: 1.1;
+}
+
+.quote-form-intro > p {
+    max-width: 520px;
+
+    margin: 17px 0 0;
+
+    color: var(--naksh-muted);
+
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+.quote-form-intro__points {
+    display: grid;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.quote-form-point {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 15px;
+
+    border:
+        1px solid var(--naksh-border);
+
+    border-radius: 10px;
+
+    background: #fff;
+}
+
+.quote-form-point > span {
+    width: 37px;
+    height: 37px;
+
+    flex: 0 0 37px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(247,147,0,.11);
+
+    color: var(--naksh-orange);
+
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.quote-form-point strong,
+.quote-form-point small {
+    display: block;
+}
+
+.quote-form-point strong {
+    color: var(--naksh-navy);
+
+    font-size: 10px;
+}
+
+.quote-form-point small {
+    margin-top: 3px;
+
+    color: var(--naksh-muted);
+
+    font-size: 8px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.quote-form-card {
+    min-width: 0;
+
+    padding: clamp(22px,4vw,38px);
+
+    border:
+        1px solid var(--naksh-border);
+
+    border-radius: 16px;
+
+    background: #fff;
+
+    box-shadow:
+        0 20px 50px
+        rgba(7,54,109,.08);
+}
+
+
+/* =========================================================
+   GROUPS
+========================================================= */
+
+.quote-form-group {
+    padding-bottom: 29px;
+
+    margin-bottom: 29px;
+
+    border-bottom:
+        1px solid var(--naksh-border);
+}
+
+.quote-form-group:last-of-type {
+    margin-bottom: 20px;
+}
+
+.quote-form-group__heading {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 20px;
+}
+
+.quote-form-group__heading > span {
+    width: 35px;
+    height: 35px;
+
+    flex: 0 0 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: var(--naksh-navy);
+
+    color: #fff;
+
+    font-size: 8px;
+    font-weight: 900;
+}
+
+.quote-form-group__heading strong,
+.quote-form-group__heading small {
+    display: block;
+}
+
+.quote-form-group__heading strong {
+    color: var(--naksh-navy);
+
+    font-size: 11px;
+}
+
+.quote-form-group__heading small {
+    margin-top: 2px;
+
+    color: var(--naksh-muted);
+
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   GRID / FIELD
+========================================================= */
+
+.quote-form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap: 17px;
+}
+
+.quote-field {
+    min-width: 0;
+}
+
+.quote-field--full {
+    grid-column: 1 / -1;
+}
+
+.quote-field label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--naksh-navy);
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.quote-field label span {
+    color: var(--naksh-orange);
+}
+
+.quote-field input,
+.quote-field select,
+.quote-field textarea {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border:
+        1px solid var(--naksh-border);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #fff;
+
+    color: var(--naksh-text);
+
+    font: inherit;
+    font-size: 10px;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.quote-field textarea {
+    min-height: 145px;
+
+    resize: vertical;
+
+    line-height: 1.65;
+}
+
+.quote-field input:focus,
+.quote-field select:focus,
+.quote-field textarea:focus {
+    border-color: var(--naksh-orange);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(247,147,0,.08);
+}
+
+.quote-field.is-invalid input,
+.quote-field.is-invalid select,
+.quote-field.is-invalid textarea {
+    border-color: #dc2626;
+}
+
+.quote-field__error {
+    min-height: 15px;
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #dc2626;
+
+    font-size: 7px;
+    font-weight: 700;
+}
+
+.quote-field__footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+.quote-field__count {
+    flex: 0 0 auto;
+
+    margin-top: 5px;
+
+    color: var(--naksh-muted);
+
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.quote-form-submit {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 15px 20px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background: var(--naksh-orange);
+
+    color: #fff;
+
+    font: inherit;
+    font-size: 10px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+.quote-form-submit:hover {
+    background:
+        var(--naksh-orange-dark);
+
+    transform: translateY(-1px);
+}
+
+.quote-form-submit:disabled {
+    opacity: .65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+.quote-form-note {
+    margin: 10px 0 0;
+
+    color: var(--naksh-muted);
+
+    font-size: 7px;
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   ALERT
+========================================================= */
+
+.quote-form-alert {
+    margin-bottom: 22px;
+
+    padding: 13px 15px;
+
+    border-radius: 8px;
+}
+
+.quote-form-alert strong,
+.quote-form-alert span {
+    display: block;
+}
+
+.quote-form-alert strong {
+    margin-bottom: 3px;
+
+    font-size: 9px;
+}
+
+.quote-form-alert span {
+    font-size: 8px;
+
+    line-height: 1.5;
+}
+
+.quote-form-alert--success {
+    border: 1px solid #bbf7d0;
+
+    background: #f0fdf4;
+
+    color: #166534;
+}
+
+.quote-form-alert--error {
+    border: 1px solid #fecaca;
+
+    background: #fef2f2;
+
+    color: #991b1b;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .quote-form-section {
+        padding: 70px 0;
+    }
+
+    .quote-form-section__grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .quote-form-section {
+        padding: 58px 0;
+    }
+
+    .quote-form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .quote-field--full {
+        grid-column: auto;
+    }
+
+    .quote-form-card {
+        padding: 20px 16px;
+
+        border-radius: 12px;
+    }
+
+    .quote-form-group {
+        padding-bottom: 23px;
+
+        margin-bottom: 23px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .quote-form-card {
+        padding: 18px 13px;
+    }
+
+    .quote-form-point {
+        padding: 12px;
+    }
+
+}

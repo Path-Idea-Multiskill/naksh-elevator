@@ -1,0 +1,328 @@
+/* =========================================================
+   ABOUT - MISSION & VISION
+========================================================= */
+
+.about-purpose {
+    position: relative;
+    overflow: hidden;
+    padding: 90px 0;
+    background: #f6f8fb;
+}
+
+
+/* HEADING */
+
+.about-purpose__heading {
+    max-width: 720px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+
+.about-purpose__eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-bottom: 11px;
+
+    color: var(--naksh-orange);
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+
+.about-purpose__eyebrow span {
+    width: 27px;
+    height: 2px;
+    background: var(--naksh-orange);
+}
+
+
+.about-purpose__heading h2 {
+    margin: 0;
+
+    color: var(--naksh-navy);
+
+    font-size: clamp(32px, 3.6vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+
+.about-purpose__heading > p {
+    max-width: 590px;
+    margin: 15px auto 0;
+
+    color: var(--naksh-muted);
+
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+
+/* GRID */
+
+.about-purpose__grid {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+
+    max-width: 1050px;
+    margin: auto;
+}
+
+
+/* CARD */
+
+.about-purpose__card {
+    position: relative;
+    min-width: 0;
+    min-height: 360px;
+
+    padding: 38px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--naksh-border);
+    border-radius: 15px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 10px 35px
+        rgba(15, 23, 42, .055);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+
+.about-purpose__card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(247, 147, 0, .32);
+
+    box-shadow:
+        0 20px 45px
+        rgba(7, 54, 109, .10);
+}
+
+
+/* LARGE NUMBER */
+
+.about-purpose__number {
+    position: absolute;
+
+    top: 15px;
+    right: 24px;
+
+    color:
+        rgba(7, 54, 109, .055);
+
+    font-size: 85px;
+    font-weight: 900;
+
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+
+/* ICON */
+
+.about-purpose__icon {
+    position: relative;
+    z-index: 2;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 28px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(247, 147, 0, .12);
+
+    color: var(--naksh-orange);
+
+    font-size: 18px;
+    font-weight: 900;
+}
+
+
+/* LABEL */
+
+.about-purpose__label {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--naksh-orange);
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: 1.3px;
+}
+
+
+/* TITLE */
+
+.about-purpose__card h3 {
+    position: relative;
+    z-index: 2;
+
+    max-width: 380px;
+
+    margin: 0;
+
+    color: var(--naksh-navy);
+
+    font-size: 25px;
+    line-height: 1.25;
+}
+
+
+/* DESCRIPTION */
+
+.about-purpose__card > p {
+    position: relative;
+    z-index: 2;
+
+    margin: 17px 0 0;
+
+    color: var(--naksh-muted);
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* ORANGE BOTTOM LINE */
+
+.about-purpose__card::after {
+    content: "";
+
+    position: absolute;
+
+    left: 38px;
+    bottom: 0;
+
+    width: 65px;
+    height: 4px;
+
+    border-radius: 4px 4px 0 0;
+
+    background: var(--naksh-orange);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .about-purpose {
+        padding: 70px 0;
+    }
+
+    .about-purpose__card {
+        padding: 30px;
+    }
+
+    .about-purpose__card::after {
+        left: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .about-purpose {
+        padding: 58px 0;
+    }
+
+    .about-purpose__heading {
+        margin-bottom: 30px;
+    }
+
+    .about-purpose__heading h2 {
+        font-size:
+            clamp(29px, 9vw, 39px);
+    }
+
+    .about-purpose__grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .about-purpose__card {
+        min-height: auto;
+        padding: 27px 22px 31px;
+    }
+
+    .about-purpose__number {
+        right: 17px;
+        font-size: 70px;
+    }
+
+    .about-purpose__icon {
+        width: 46px;
+        height: 46px;
+        margin-bottom: 23px;
+    }
+
+    .about-purpose__card h3 {
+        font-size: 22px;
+    }
+
+    .about-purpose__card::after {
+        left: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .about-purpose__eyebrow span {
+        width: 20px;
+    }
+
+    .about-purpose__card {
+        padding:
+            24px 18px 29px;
+    }
+
+    .about-purpose__card::after {
+        left: 18px;
+    }
+
+}

@@ -1,0 +1,371 @@
+/* =========================================================
+   ABOUT PAGE - OUR STORY
+========================================================= */
+
+.about-story {
+    padding: 95px 0;
+
+    overflow: hidden;
+
+    background: #ffffff;
+}
+
+
+.about-story__grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(350px, .9fr)
+        minmax(0, 1.1fr);
+
+    align-items: center;
+
+    gap: clamp(55px, 8vw, 105px);
+}
+
+
+/* =========================================================
+   VISUAL
+========================================================= */
+
+.about-story__visual {
+    position: relative;
+
+    min-width: 0;
+
+    padding: 0 0 35px 30px;
+}
+
+
+.about-story__image-wrap {
+    position: relative;
+
+    height: 510px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background: #eef3f8;
+
+    box-shadow:
+        0 22px 55px
+        rgba(7, 54, 109, .12);
+}
+
+
+.about-story__image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+/* DECORATIVE BORDER */
+
+.about-story__image-wrap::before {
+    content: "";
+
+    position: absolute;
+    z-index: 2;
+
+    top: 0;
+    left: 0;
+
+    width: 6px;
+    height: 100%;
+
+    background: var(--naksh-orange);
+}
+
+
+/* FLOATING BOX */
+
+.about-story__experience {
+    position: absolute;
+    z-index: 4;
+
+    left: 0;
+    bottom: 0;
+
+    width: 190px;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    background: var(--naksh-navy);
+
+    box-shadow:
+        0 15px 35px
+        rgba(7, 54, 109, .2);
+}
+
+
+.about-story__experience strong,
+.about-story__experience span {
+    display: block;
+}
+
+
+.about-story__experience strong {
+    color: var(--naksh-orange);
+
+    font-size: 20px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+.about-story__experience span {
+    margin-top: 5px;
+
+    color:
+        rgba(255, 255, 255, .82);
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.about-story__content {
+    min-width: 0;
+}
+
+
+.about-story__eyebrow {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 13px;
+
+    color: var(--naksh-orange);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.1px;
+}
+
+
+.about-story__eyebrow > span {
+    width: 30px;
+    height: 2px;
+
+    flex-shrink: 0;
+
+    background: var(--naksh-orange);
+}
+
+
+.about-story__content h2 {
+    max-width: 700px;
+
+    margin: 0;
+
+    color: var(--naksh-navy);
+
+    font-size:
+        clamp(32px, 3.5vw, 48px);
+
+    line-height: 1.12;
+
+    letter-spacing: -1px;
+}
+
+
+.about-story__description {
+    max-width: 700px;
+
+    margin-top: 20px;
+}
+
+
+.about-story__description p {
+    margin: 0;
+
+    color: var(--naksh-muted);
+
+    font-size: 13px;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.about-story__features {
+    display: grid;
+
+    gap: 15px;
+
+    margin-top: 27px;
+}
+
+
+.about-story__feature {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+}
+
+
+.about-story__feature > span {
+    width: 30px;
+    height: 30px;
+
+    flex: 0 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 2px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(247, 147, 0, .12);
+
+    color: var(--naksh-orange);
+
+    font-size: 11px;
+    font-weight: 900;
+}
+
+
+.about-story__feature strong,
+.about-story__feature small {
+    display: block;
+}
+
+
+.about-story__feature strong {
+    color: var(--naksh-navy);
+
+    font-size: 12px;
+}
+
+
+.about-story__feature small {
+    margin-top: 4px;
+
+    color: var(--naksh-muted);
+
+    font-size: 10px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .about-story {
+        padding: 75px 0;
+    }
+
+
+    .about-story__grid {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+
+    .about-story__visual {
+        width: min(100%, 650px);
+    }
+
+
+    .about-story__image-wrap {
+        height: 480px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .about-story {
+        padding: 60px 0;
+    }
+
+
+    .about-story__grid {
+        gap: 45px;
+    }
+
+
+    .about-story__visual {
+        padding:
+            0 0 28px 18px;
+    }
+
+
+    .about-story__image-wrap {
+        height: 390px;
+
+        border-radius: 12px;
+    }
+
+
+    .about-story__experience {
+        width: 165px;
+
+        padding: 16px;
+    }
+
+
+    .about-story__content h2 {
+        font-size:
+            clamp(29px, 9vw, 39px);
+    }
+
+
+    .about-story__description p {
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .about-story__image-wrap {
+        height: 340px;
+    }
+
+
+    .about-story__visual {
+        padding-left: 12px;
+    }
+
+}

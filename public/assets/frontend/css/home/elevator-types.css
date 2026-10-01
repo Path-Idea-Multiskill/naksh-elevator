@@ -1,0 +1,680 @@
+/* =========================================================
+   HOME - ELEVATOR TYPES
+========================================================= */
+
+.home-elevators {
+    position: relative;
+    overflow: hidden;
+
+    padding: 85px 0;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.home-elevators__header {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(280px, .85fr);
+
+    align-items: end;
+
+    gap: 45px;
+
+    margin-bottom: 38px;
+}
+
+
+.home-elevators__eyebrow {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 11px;
+
+    color: var(--naksh-orange);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.home-elevators__eyebrow span {
+    width: 30px;
+    height: 2px;
+
+    flex-shrink: 0;
+
+    background:
+        var(--naksh-orange);
+}
+
+
+.home-elevators__heading h2 {
+    max-width: 650px;
+
+    margin: 0;
+
+    color:
+        var(--naksh-navy);
+
+    font-size:
+        clamp(31px, 3.4vw, 47px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1px;
+}
+
+
+.home-elevators__intro {
+    max-width: 490px;
+
+    margin: 0;
+
+    color:
+        var(--naksh-muted);
+
+    font-size: 13px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.home-elevators__grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+/* =========================================================
+   PREMIUM ELEVATOR CARD
+========================================================= */
+
+.home-elevators__card {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+
+    border: 1px solid rgba(7, 54, 109, 0.14);
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    /* lighter premium shadow */
+    box-shadow:
+        0 4px 14px rgba(15, 23, 42, 0.035),
+        0 12px 30px rgba(15, 23, 42, 0.025);
+
+    transition:
+        transform .35s cubic-bezier(.22, .61, .36, 1),
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+    /* scroll animation initial state */
+    opacity: 0;
+    transform: translateY(28px);
+}
+
+
+/* Orange premium top accent */
+.home-elevators__card::before {
+    content: "";
+
+    position: absolute;
+    z-index: 5;
+
+    top: 0;
+    left: 50%;
+
+    width: 0;
+    height: 3px;
+
+    transform: translateX(-50%);
+
+    border-radius: 0 0 4px 4px;
+
+    background: var(--naksh-orange);
+
+    transition: width .35s ease;
+}
+
+
+/* Card visible after JS */
+.home-elevators__card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Hover */
+.home-elevators__card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(247, 147, 0, 0.42);
+
+    box-shadow:
+        0 6px 18px rgba(15, 23, 42, 0.04),
+        0 18px 38px rgba(7, 54, 109, 0.07);
+}
+
+
+.home-elevators__card:hover::before {
+    width: 100%;
+}
+
+
+/* =========================================================
+   CARD IMAGE
+========================================================= */
+
+.home-elevators__image {
+    position: relative;
+
+    height: 255px;
+
+    overflow: hidden;
+
+    background: #f3f6f9;
+
+    border-bottom:
+        1px solid rgba(7, 54, 109, 0.08);
+}
+
+
+.home-elevators__image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .65s cubic-bezier(.22, .61, .36, 1),
+        filter .35s ease;
+}
+
+
+.home-elevators__card:hover
+.home-elevators__image img {
+    transform: scale(1.035);
+
+    filter:
+        saturate(1.03)
+        contrast(1.015);
+}
+
+
+
+
+.home-elevators__placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    color:
+        var(--naksh-navy);
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8fafc,
+            #edf3f9
+        );
+}
+
+
+.home-elevators__placeholder span {
+    font-size: 35px;
+
+    color:
+        var(--naksh-orange);
+}
+
+
+.home-elevators__placeholder small {
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+.home-elevators__number {
+    position: absolute;
+    z-index: 4;
+
+    top: 14px;
+    right: 14px;
+
+    min-width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px;
+
+    border:
+        2px solid rgba(255, 255, 255, .85);
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    background:
+        var(--naksh-orange);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: .3px;
+
+    box-shadow:
+        0 5px 15px rgba(247, 147, 0, .20);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.home-elevators__card:hover
+.home-elevators__number {
+    transform:
+        translateY(-2px)
+        rotate(5deg);
+
+    box-shadow:
+        0 8px 20px rgba(247, 147, 0, .27);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.home-elevators__content {
+    padding:
+        20px 20px 21px;
+}
+
+
+.home-elevators__content h3 {
+    margin: 0;
+
+    color:
+        var(--naksh-navy);
+
+    font-size: 18px;
+
+    line-height: 1.3;
+}
+
+
+.home-elevators__content p {
+    min-height: 63px;
+
+    margin:
+        10px 0 17px;
+
+    color:
+        var(--naksh-muted);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+.home-elevators__link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color:
+        var(--naksh-navy);
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+.home-elevators__link span {
+    color:
+        var(--naksh-orange);
+
+    transition:
+        transform .2s ease;
+}
+
+
+.home-elevators__link:hover {
+    color:
+        var(--naksh-orange);
+}
+
+
+.home-elevators__link:hover span {
+    transform:
+        translateX(4px);
+}
+
+
+/* =========================================================
+   VIEW ALL
+========================================================= */
+
+.home-elevators__footer {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 35px;
+}
+
+
+.home-elevators__view-all {
+    min-height: 46px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding:
+        10px 20px;
+
+    border:
+        1px solid var(--naksh-navy);
+
+    border-radius: 7px;
+
+    color:
+        var(--naksh-navy);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+
+.home-elevators__view-all:hover {
+    background:
+        var(--naksh-navy);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.home-elevators__empty {
+    padding: 55px 20px;
+
+    border:
+        1px dashed var(--naksh-border);
+
+    border-radius: 12px;
+
+    background:
+        #f8fafc;
+
+    text-align: center;
+}
+
+
+.home-elevators__empty > span {
+    color:
+        var(--naksh-orange);
+
+    font-size: 35px;
+}
+
+
+.home-elevators__empty h3 {
+    margin:
+        10px 0 5px;
+
+    color:
+        var(--naksh-navy);
+}
+
+
+.home-elevators__empty p {
+    margin: 0;
+
+    color:
+        var(--naksh-muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .home-elevators {
+        padding:
+            70px 0;
+    }
+
+
+    .home-elevators__header {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    .home-elevators__intro {
+        max-width: 650px;
+    }
+
+
+    .home-elevators__grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .home-elevators {
+        padding:
+            55px 0;
+    }
+
+
+    .home-elevators__header {
+        margin-bottom: 27px;
+    }
+
+
+    .home-elevators__heading h2 {
+        font-size:
+            clamp(
+                29px,
+                9vw,
+                39px
+            );
+    }
+
+
+    .home-elevators__grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+
+    .home-elevators__image {
+        height: 235px;
+    }
+
+
+    .home-elevators__content p {
+        min-height: auto;
+    }
+
+
+    .home-elevators__view-all {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .home-elevators__image {
+        height: 215px;
+    }
+
+
+    .home-elevators__content {
+        padding:
+            17px 16px 18px;
+    }
+}
+
+.home-elevators__content {
+    position: relative;
+
+    padding:
+        21px 20px 22px;
+
+    background: #ffffff;
+}
+
+
+.home-elevators__content h3 {
+    transition:
+        color .25s ease,
+        transform .25s ease;
+}
+
+
+.home-elevators__card:hover
+.home-elevators__content h3 {
+    color:
+        var(--naksh-navy-light);
+}
+
+
+/* Explore Solution */
+
+.home-elevators__link {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding-bottom: 4px;
+
+    color:
+        var(--naksh-navy);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition:
+        color .25s ease;
+}
+
+
+.home-elevators__link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 1px;
+
+    background:
+        var(--naksh-orange);
+
+    transition:
+        width .3s ease;
+}
+
+
+.home-elevators__link span {
+    color:
+        var(--naksh-orange);
+
+    transition:
+        transform .3s ease;
+}
+
+
+.home-elevators__link:hover {
+    color:
+        var(--naksh-orange);
+}
+
+
+.home-elevators__link:hover::after {
+    width: 100%;
+}
+
+
+.home-elevators__link:hover span {
+    transform:
+        translateX(5px);
+}
+

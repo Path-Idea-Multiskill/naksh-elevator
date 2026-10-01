@@ -1,0 +1,497 @@
+.cabin-detail-container {
+    width: min(100% - 40px, 1280px);
+    margin-inline: auto;
+}
+
+/* HERO */
+
+.cabin-detail-hero {
+    overflow: hidden;
+    padding: 70px 0;
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(247, 147, 0, .12),
+            transparent 27%
+        ),
+        #f7f9fc;
+}
+
+.cabin-detail-hero__grid {
+    display: grid;
+    grid-template-columns:
+        minmax(0, .9fr)
+        minmax(420px, 1.1fr);
+    align-items: center;
+    gap: clamp(45px, 7vw, 90px);
+}
+
+.cabin-detail-hero__breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+.cabin-detail-hero__breadcrumb a {
+    color: #64748b;
+    text-decoration: none;
+}
+
+.cabin-detail-hero__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 12px;
+    color: #f79300;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+.cabin-detail-hero__eyebrow > span {
+    width: 30px;
+    height: 2px;
+    background: #f79300;
+}
+
+.cabin-detail-hero h1 {
+    max-width: 620px;
+    margin: 0;
+    color: #07366d;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.04;
+    letter-spacing: -2px;
+}
+
+.cabin-detail-hero__content > p {
+    max-width: 580px;
+    margin: 22px 0 0;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.cabin-detail-hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    margin-top: 28px;
+    padding-top: 23px;
+    border-top: 1px solid #dfe6ee;
+}
+
+.cabin-detail-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cabin-detail-meta span {
+    color: #94a3b8;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cabin-detail-meta strong {
+    color: #07366d;
+    font-size: 13px;
+}
+
+.cabin-detail-hero__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    padding: 13px 20px;
+    border-radius: 7px;
+    background: #07366d;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    transition:
+        background .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.cabin-detail-hero__button:hover {
+    background: #f79300;
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 25px rgba(247,147,0,.18);
+}
+
+.cabin-detail-hero__visual {
+    position: relative;
+}
+
+.cabin-detail-hero__image {
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border: 1px solid #dde5ee;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow:
+        0 20px 50px rgba(15,23,42,.08);
+}
+
+.cabin-detail-hero__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .7s ease;
+}
+
+.cabin-detail-hero__visual:hover img {
+    transform: scale(1.035);
+}
+
+.cabin-detail-hero__featured {
+    position: absolute;
+    z-index: 3;
+    top: 18px;
+    left: 18px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: #f79300;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+/* OVERVIEW */
+
+.cabin-detail-overview {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.cabin-detail-overview__grid {
+    display: grid;
+    grid-template-columns: .75fr 1.25fr;
+    gap: clamp(45px, 8vw, 110px);
+}
+
+.cabin-detail-label {
+    color: #f79300;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+.cabin-detail-overview__heading h2,
+.cabin-detail-gallery__heading h2,
+.cabin-related__heading h2 {
+    margin: 8px 0 0;
+    color: #07366d;
+    font-size: clamp(28px, 3.5vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.cabin-detail-description,
+.cabin-detail-overview__content > p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.cabin-detail-specs {
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    border: 1px solid #e2e8f0;
+    border-radius: 13px;
+    overflow: hidden;
+}
+
+.cabin-detail-spec {
+    padding: 20px;
+    border-right: 1px solid #e2e8f0;
+}
+
+.cabin-detail-spec:last-child {
+    border-right: 0;
+}
+
+.cabin-detail-spec span,
+.cabin-detail-spec strong {
+    display: block;
+}
+
+.cabin-detail-spec span {
+    margin-bottom: 6px;
+    color: #94a3b8;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+}
+
+.cabin-detail-spec strong {
+    color: #07366d;
+    font-size: 12px;
+}
+
+/* GALLERY */
+
+.cabin-detail-gallery {
+    padding: 75px 0;
+    background: #f7f9fc;
+}
+
+.cabin-detail-gallery__heading,
+.cabin-related__heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.cabin-detail-gallery__heading > p {
+    max-width: 420px;
+    margin: 0;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.cabin-detail-gallery__grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.cabin-gallery-item {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 0;
+    aspect-ratio: 4 / 3;
+    border: 1px solid #dce4ed;
+    border-radius: 13px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.cabin-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.cabin-gallery-item__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 16px;
+    background:
+        linear-gradient(
+            transparent 50%,
+            rgba(5,38,80,.78)
+        );
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.cabin-gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.cabin-gallery-item:hover
+.cabin-gallery-item__overlay {
+    opacity: 1;
+}
+
+/* LIGHTBOX */
+
+.cabin-lightbox {
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: rgba(2,12,27,.93);
+}
+
+.cabin-lightbox.is-open {
+    display: flex;
+}
+
+.cabin-lightbox img {
+    max-width: min(100%, 1100px);
+    max-height: 88vh;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.cabin-lightbox__close {
+    position: absolute;
+    top: 22px;
+    right: 25px;
+    display: grid;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 50%;
+    background: rgba(255,255,255,.08);
+    color: #fff;
+    font-size: 27px;
+    cursor: pointer;
+    place-items: center;
+}
+
+/* RELATED */
+
+.cabin-related {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.cabin-related__heading > a {
+    color: #07366d;
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.cabin-related__grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/*
+ Reuse listing card styling because design-card.blade.php
+ uses .cabin-design-item classes.
+*/
+
+.cabin-related .cabin-design-item {
+    overflow: hidden;
+    border: 1px solid #e0e7ef;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(15,23,42,.04);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1050px) {
+    .cabin-detail-hero__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .cabin-detail-gallery__grid,
+    .cabin-related__grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 850px) {
+    .cabin-detail-hero__grid,
+    .cabin-detail-overview__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cabin-detail-hero__content {
+        max-width: 680px;
+    }
+
+    .cabin-detail-hero__visual {
+        max-width: 700px;
+    }
+
+    .cabin-detail-overview__grid {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 650px) {
+    .cabin-detail-container {
+        width: min(100% - 28px, 1280px);
+    }
+
+    .cabin-detail-hero {
+        padding: 48px 0;
+    }
+
+    .cabin-detail-hero h1 {
+        font-size: clamp(34px, 10vw, 46px);
+        letter-spacing: -1px;
+    }
+
+    .cabin-detail-hero__image {
+        border-radius: 14px;
+    }
+
+    .cabin-detail-overview,
+    .cabin-detail-gallery,
+    .cabin-related {
+        padding: 55px 0;
+    }
+
+    .cabin-detail-specs {
+        grid-template-columns: 1fr;
+    }
+
+    .cabin-detail-spec {
+        border-right: 0;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .cabin-detail-spec:last-child {
+        border-bottom: 0;
+    }
+
+    .cabin-detail-gallery__heading,
+    .cabin-related__heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .cabin-detail-gallery__grid,
+    .cabin-related__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cabin-gallery-item__overlay {
+        opacity: 1;
+    }
+
+    .cabin-lightbox {
+        padding: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cabin-detail-hero__image img,
+    .cabin-gallery-item img,
+    .cabin-detail-hero__button {
+        transition: none;
+    }
+}

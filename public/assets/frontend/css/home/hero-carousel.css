@@ -1,0 +1,737 @@
+/* =====================================================
+   NAKSH ELEVATOR - PREMIUM HOME HERO CAROUSEL
+===================================================== */
+
+.naksh-hero-slider {
+    position: relative;
+    width: 100%;
+    height: clamp(620px, calc(100vh - 110px), 820px);
+    min-height: 620px;
+    overflow: hidden;
+    background: #052650;
+    isolation: isolate;
+}
+
+.naksh-hero-slider *,
+.naksh-hero-slider *::before,
+.naksh-hero-slider *::after {
+    box-sizing: border-box;
+}
+
+
+/* TRACK / SLIDES
+===================================================== */
+
+.naksh-hero-slider__track {
+    position: absolute;
+    inset: 0;
+}
+
+.naksh-hero-slide {
+    position: absolute;
+    inset: 0;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+    transition:
+        opacity 900ms cubic-bezier(.22, .61, .36, 1),
+        visibility 900ms;
+}
+
+.naksh-hero-slide.is-active {
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+}
+
+
+/* IMAGE
+===================================================== */
+
+.naksh-hero-slide__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+
+    transform: scale(1.06);
+    transition:
+        transform 7s cubic-bezier(.2, .65, .3, 1);
+}
+
+.naksh-hero-slide.is-active
+.naksh-hero-slide__image {
+    transform: scale(1);
+}
+
+
+/* PREMIUM OVERLAY
+===================================================== */
+
+.naksh-hero-slide__shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 31, 66, .94) 0%,
+            rgba(4, 43, 88, .84) 25%,
+            rgba(5, 49, 99, .53) 42%,
+            rgba(5, 49, 99, .10) 62%,
+            rgba(0, 0, 0, .03) 100%
+        );
+}
+
+
+/* CONTENT
+===================================================== */
+
+.naksh-hero-slide__container {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.naksh-hero-slide__content {
+    width: min(610px, 47%);
+    color: #fff;
+    padding-bottom: 35px;
+}
+
+
+/* EYEBROW
+===================================================== */
+
+.naksh-hero-slide__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    color: #ff9800;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+.naksh-hero-slide__eyebrow span {
+    width: 38px;
+    height: 2px;
+    flex: 0 0 auto;
+
+    background: #ff9800;
+}
+
+
+/* TITLE
+===================================================== */
+
+.naksh-hero-slide h1,
+.naksh-hero-slide h2 {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: clamp(44px, 4.3vw, 72px);
+    line-height: 1.04;
+    letter-spacing: -2.2px;
+    font-weight: 700;
+
+    opacity: 0;
+    transform: translateY(35px);
+}
+
+.naksh-hero-slide h1 strong,
+.naksh-hero-slide h2 strong {
+    display: block;
+    color: #ff9800;
+    font-weight: 800;
+}
+
+
+/* DESCRIPTION
+===================================================== */
+
+.naksh-hero-slide__content > p {
+    max-width: 590px;
+
+    margin:
+        24px
+        0
+        30px;
+
+    color: rgba(255, 255, 255, .82);
+
+    font-size: 16px;
+    line-height: 1.75;
+
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+
+/* BUTTONS
+===================================================== */
+
+.naksh-hero-slide__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.naksh-hero-btn {
+    min-height: 52px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+
+    padding: 0 25px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        border-color .25s ease,
+        color .25s ease;
+}
+
+.naksh-hero-btn:hover {
+    transform: translateY(-3px);
+}
+
+.naksh-hero-btn--primary {
+    color: #fff;
+    background: #f79300;
+    border: 1px solid #f79300;
+    box-shadow:
+        0 12px 30px rgba(247, 147, 0, .22);
+}
+
+.naksh-hero-btn--primary:hover {
+    background: #dc7d00;
+    border-color: #dc7d00;
+}
+
+.naksh-hero-btn--outline {
+    color: #fff;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .42);
+
+    background:
+        rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(8px);
+}
+
+.naksh-hero-btn--outline:hover {
+    background: #fff;
+    color: #07366d;
+    border-color: #fff;
+}
+
+
+/* =====================================================
+   TEXT ENTRANCE ANIMATION
+===================================================== */
+
+.naksh-hero-slide.is-active
+.naksh-hero-slide__eyebrow {
+    animation:
+        nakshHeroContentUp
+        .7s
+        .20s
+        forwards;
+}
+
+.naksh-hero-slide.is-active h1,
+.naksh-hero-slide.is-active h2 {
+    animation:
+        nakshHeroContentUp
+        .8s
+        .32s
+        forwards;
+}
+
+.naksh-hero-slide.is-active
+.naksh-hero-slide__content > p {
+    animation:
+        nakshHeroContentUp
+        .8s
+        .45s
+        forwards;
+}
+
+.naksh-hero-slide.is-active
+.naksh-hero-slide__actions {
+    animation:
+        nakshHeroContentUp
+        .8s
+        .58s
+        forwards;
+}
+
+@keyframes nakshHeroContentUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(32px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================================
+   ARROWS
+===================================================== */
+
+.naksh-hero-slider__arrow {
+    position: absolute;
+    z-index: 10;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .30);
+
+    border-radius: 50%;
+
+    color: #fff;
+    background:
+        rgba(3, 38, 79, .35);
+
+    backdrop-filter: blur(10px);
+
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+}
+
+.naksh-hero-slider__arrow:hover {
+    background: #f79300;
+    border-color: #f79300;
+}
+
+.naksh-hero-slider__arrow--prev {
+    left: 28px;
+}
+
+.naksh-hero-slider__arrow--next {
+    right: 28px;
+}
+
+
+/* =====================================================
+   BOTTOM NAVIGATION
+===================================================== */
+
+.naksh-hero-slider__navigation {
+    position: absolute;
+    z-index: 10;
+
+    left: 50%;
+    bottom: 32px;
+
+    width: min(100% - 80px, 1200px);
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    pointer-events: none;
+}
+
+.naksh-hero-slider__counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color:
+        rgba(255, 255, 255, .65);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.naksh-hero-slider__current {
+    color: #f79300;
+    font-size: 17px;
+}
+
+.naksh-hero-slider__divider {
+    width: 34px;
+    height: 1px;
+
+    background:
+        rgba(255, 255, 255, .35);
+}
+
+.naksh-hero-slider__dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    pointer-events: auto;
+}
+
+.naksh-hero-slider__dots button {
+    width: 8px;
+    height: 8px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, .45);
+
+    cursor: pointer;
+
+    transition:
+        width .3s ease,
+        background .3s ease;
+}
+
+.naksh-hero-slider__dots button.is-active {
+    width: 32px;
+    background: #f79300;
+}
+
+
+/* PROGRESS
+===================================================== */
+
+.naksh-hero-slider__progress {
+    position: absolute;
+    z-index: 11;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        rgba(255, 255, 255, .12);
+}
+
+.naksh-hero-slider__progress span {
+    display: block;
+
+    width: 0;
+    height: 100%;
+
+    background: #f79300;
+}
+
+.naksh-hero-slider__progress span.is-running {
+    animation:
+        nakshHeroProgress
+        6s
+        linear
+        forwards;
+}
+
+@keyframes nakshHeroProgress {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+
+/* =====================================================
+   LAPTOP
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .naksh-hero-slider {
+        height: 650px;
+        min-height: 650px;
+    }
+
+    .naksh-hero-slide__content {
+        width: 52%;
+    }
+
+    .naksh-hero-slide h1,
+    .naksh-hero-slide h2 {
+        font-size: clamp(42px, 5vw, 62px);
+    }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .naksh-hero-slider {
+        height: 650px;
+        min-height: 650px;
+    }
+
+    .naksh-hero-slide__image {
+        object-position: 63% center;
+    }
+
+    .naksh-hero-slide__shade {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(3, 35, 74, .97) 0%,
+                rgba(3, 39, 82, .88) 42%,
+                rgba(3, 39, 82, .50) 70%,
+                rgba(3, 39, 82, .20) 100%
+            );
+    }
+
+    .naksh-hero-slide__content {
+        width: 65%;
+        padding-left: 25px;
+    }
+
+    .naksh-hero-slide h1,
+    .naksh-hero-slide h2 {
+        font-size: 48px;
+    }
+
+    .naksh-hero-slider__arrow--prev {
+        left: 14px;
+    }
+
+    .naksh-hero-slider__arrow--next {
+        right: 14px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .naksh-hero-slider {
+        height: 660px;
+        min-height: 660px;
+    }
+
+    .naksh-hero-slide__image {
+        object-position: 69% center;
+    }
+
+    .naksh-hero-slide__shade {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(3, 35, 74, .98) 0%,
+                rgba(3, 35, 74, .94) 35%,
+                rgba(3, 35, 74, .70) 68%,
+                rgba(3, 35, 74, .35) 100%
+            );
+    }
+
+    .naksh-hero-slide__container {
+        align-items: center;
+    }
+
+    .naksh-hero-slide__content {
+        width: 88%;
+        padding:
+            0
+            20px
+            40px;
+    }
+
+    .naksh-hero-slide__eyebrow {
+        margin-bottom: 16px;
+
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .naksh-hero-slide__eyebrow span {
+        width: 27px;
+    }
+
+    .naksh-hero-slide h1,
+    .naksh-hero-slide h2 {
+        max-width: 440px;
+
+        font-size: clamp(37px, 11vw, 48px);
+        line-height: 1.05;
+
+        letter-spacing: -1.5px;
+    }
+
+    .naksh-hero-slide__content > p {
+        max-width: 420px;
+
+        margin:
+            20px
+            0
+            25px;
+
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .naksh-hero-btn {
+        min-height: 48px;
+        padding: 0 20px;
+    }
+
+    .naksh-hero-slider__arrow {
+        top: auto;
+        bottom: 73px;
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 23px;
+    }
+
+    .naksh-hero-slider__arrow--prev {
+        left: auto;
+        right: 66px;
+    }
+
+    .naksh-hero-slider__arrow--next {
+        right: 20px;
+    }
+
+    .naksh-hero-slider__navigation {
+        left: 20px;
+        bottom: 26px;
+
+        width: calc(100% - 40px);
+
+        transform: none;
+    }
+
+}
+
+
+/* SMALL MOBILE
+===================================================== */
+
+@media (max-width: 390px) {
+
+    .naksh-hero-slider {
+        height: 640px;
+        min-height: 640px;
+    }
+
+    .naksh-hero-slide__content {
+        width: 94%;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .naksh-hero-slide h1,
+    .naksh-hero-slide h2 {
+        font-size: 36px;
+    }
+
+    .naksh-hero-slide__actions {
+        align-items: stretch;
+        flex-direction: column;
+        width: 210px;
+    }
+
+    .naksh-hero-btn {
+        width: 100%;
+    }
+
+}
+
+
+/* REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .naksh-hero-slide,
+    .naksh-hero-slide__image,
+    .naksh-hero-slide__eyebrow,
+    .naksh-hero-slide h1,
+    .naksh-hero-slide h2,
+    .naksh-hero-slide__content > p,
+    .naksh-hero-slide__actions {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .naksh-hero-slide.is-active
+    .naksh-hero-slide__eyebrow,
+
+    .naksh-hero-slide.is-active h1,
+    .naksh-hero-slide.is-active h2,
+
+    .naksh-hero-slide.is-active
+    .naksh-hero-slide__content > p,
+
+    .naksh-hero-slide.is-active
+    .naksh-hero-slide__actions {
+        opacity: 1;
+        transform: none;
+    }
+
+}

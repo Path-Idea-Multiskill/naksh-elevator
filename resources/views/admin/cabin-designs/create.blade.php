@@ -1,0 +1,72 @@
+@extends('layouts.admin')
+
+@section('title', 'Add Cabin Design')
+
+@section('content')
+
+<div class="cabin-admin-page">
+
+    <div class="cabin-page-header">
+        <div>
+            <span class="cabin-eyebrow">
+                CABIN DESIGNS
+            </span>
+
+            <h1>Add New Cabin Design</h1>
+
+            <p>
+                Add elevator cabin interiors, ceilings,
+                designer sheets and premium finishes.
+            </p>
+        </div>
+
+        <a
+            href="{{ route('admin.cabin-designs.index') }}"
+            class="cabin-btn cabin-btn-outline"
+        >
+            ← Back to Designs
+        </a>
+    </div>
+
+    @if ($errors->any())
+        <div class="cabin-alert cabin-alert-error">
+            Please correct the highlighted fields.
+        </div>
+    @endif
+
+    <div class="cabin-form-card">
+
+        <form
+            action="{{ route('admin.cabin-designs.store') }}"
+            method="POST"
+            enctype="multipart/form-data"
+        >
+            @csrf
+
+            @include(
+                'admin.cabin-designs.partials.form'
+            )
+
+            <div class="cabin-form-actions">
+                <a
+                    href="{{ route('admin.cabin-designs.index') }}"
+                    class="cabin-btn cabin-btn-outline"
+                >
+                    Cancel
+                </a>
+
+                <button
+                    type="submit"
+                    class="cabin-btn cabin-btn-primary"
+                >
+                    Save Cabin Design
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+@endsection

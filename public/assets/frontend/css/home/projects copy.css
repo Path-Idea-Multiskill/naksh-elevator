@@ -1,0 +1,559 @@
+/* =========================================================
+   HOME - FEATURED PROJECTS
+========================================================= */
+
+.home-projects {
+    position: relative;
+    overflow: hidden;
+
+    padding: 90px 0;
+
+    background: #f6f8fb;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.home-projects__header {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(280px, .85fr);
+
+    align-items: end;
+
+    gap: 45px;
+
+    margin-bottom: 38px;
+}
+
+
+.home-projects__eyebrow {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 11px;
+
+    color: var(--naksh-orange);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.home-projects__eyebrow span {
+    width: 30px;
+    height: 2px;
+
+    flex-shrink: 0;
+
+    background: var(--naksh-orange);
+}
+
+
+.home-projects__header h2 {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: var(--naksh-navy);
+
+    font-size:
+        clamp(31px, 3.4vw, 47px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1px;
+}
+
+
+.home-projects__header > p {
+    max-width: 490px;
+
+    margin: 0;
+
+    color: var(--naksh-muted);
+
+    font-size: 13px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.home-projects__grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.home-project-card {
+    min-width: 0;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--naksh-border);
+
+    border-radius: 13px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 30px
+        rgba(15, 23, 42, .055);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.home-project-card:hover {
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 18px 45px
+        rgba(7, 54, 109, .11);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.home-project-card__image {
+    position: relative;
+
+    height: 270px;
+
+    overflow: hidden;
+
+    background: #eef3f8;
+}
+
+
+.home-project-card__image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .45s ease;
+}
+
+
+.home-project-card:hover
+.home-project-card__image img {
+    transform:
+        scale(1.045);
+}
+
+
+.home-project-card__placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8fafc,
+            #eaf0f6
+        );
+
+    color:
+        var(--naksh-navy);
+}
+
+
+.home-project-card__placeholder span {
+    color:
+        var(--naksh-orange);
+
+    font-size: 35px;
+}
+
+
+.home-project-card__placeholder small {
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* CATEGORY */
+
+.home-project-card__category {
+    position: absolute;
+
+    left: 14px;
+    bottom: 14px;
+
+    max-width:
+        calc(100% - 28px);
+
+    padding: 7px 11px;
+
+    overflow: hidden;
+
+    border-radius: 6px;
+
+    background:
+        var(--naksh-orange);
+
+    color: #ffffff;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    box-shadow:
+        0 6px 16px
+        rgba(247, 147, 0, .22);
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+.home-project-card__body {
+    padding: 20px;
+}
+
+
+.home-project-card__location {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 8px;
+
+    color:
+        var(--naksh-muted);
+
+    font-size: 9px;
+    font-weight: 600;
+}
+
+
+.home-project-card__location span {
+    color:
+        var(--naksh-orange);
+
+    font-size: 7px;
+}
+
+
+.home-project-card__body h3 {
+    margin: 0;
+
+    color:
+        var(--naksh-navy);
+
+    font-size: 18px;
+
+    line-height: 1.35;
+}
+
+
+.home-project-card__body > p {
+    margin:
+        10px 0 18px;
+
+    color:
+        var(--naksh-muted);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
+
+.home-project-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid #edf1f5;
+}
+
+
+.home-project-card__link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color:
+        var(--naksh-navy);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+
+.home-project-card__link span {
+    color:
+        var(--naksh-orange);
+
+    transition:
+        transform .2s ease;
+}
+
+
+.home-project-card__link:hover {
+    color:
+        var(--naksh-orange);
+}
+
+
+.home-project-card__link:hover span {
+    transform:
+        translateX(4px);
+}
+
+
+.home-project-card__footer small {
+    color:
+        var(--naksh-muted);
+
+    font-size: 9px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   VIEW ALL
+========================================================= */
+
+.home-projects__bottom {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 35px;
+}
+
+
+.home-projects__view-all {
+    min-height: 46px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 10px 21px;
+
+    border:
+        1px solid var(--naksh-navy);
+
+    border-radius: 7px;
+
+    color:
+        var(--naksh-navy);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+
+.home-projects__view-all:hover {
+    background:
+        var(--naksh-navy);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.home-projects__empty {
+    padding: 55px 20px;
+
+    border:
+        1px dashed var(--naksh-border);
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    text-align: center;
+}
+
+
+.home-projects__empty > span {
+    color:
+        var(--naksh-orange);
+
+    font-size: 35px;
+}
+
+
+.home-projects__empty h3 {
+    margin:
+        10px 0 5px;
+
+    color:
+        var(--naksh-navy);
+}
+
+
+.home-projects__empty p {
+    margin: 0;
+
+    color:
+        var(--naksh-muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .home-projects {
+        padding: 70px 0;
+    }
+
+
+    .home-projects__header {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    .home-projects__header > p {
+        max-width: 650px;
+    }
+
+
+    .home-projects__grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .home-projects {
+        padding: 55px 0;
+    }
+
+
+    .home-projects__header {
+        margin-bottom: 27px;
+    }
+
+
+    .home-projects__header h2 {
+        font-size:
+            clamp(29px, 9vw, 39px);
+    }
+
+
+    .home-projects__grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+
+    .home-project-card__image {
+        height: 250px;
+    }
+
+
+    .home-projects__view-all {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .home-project-card__image {
+        height: 225px;
+    }
+
+
+    .home-project-card__body {
+        padding: 17px 16px;
+    }
+
+
+    .home-project-card__footer {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+}

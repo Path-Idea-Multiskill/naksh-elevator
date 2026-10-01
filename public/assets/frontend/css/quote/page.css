@@ -1,0 +1,539 @@
+/* =========================================================
+   QUOTE PAGE
+========================================================= */
+
+.quote-hero *,
+.quote-benefits * {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.quote-hero {
+    position: relative;
+    overflow: hidden;
+
+    padding: 82px 0;
+
+    background:
+        linear-gradient(135deg,
+            #f8fafc 0%,
+            #edf4fb 100%);
+}
+
+.quote-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    top: -230px;
+    right: -120px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(247, 147, 0, .08);
+}
+
+.quote-hero__grid {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr) minmax(320px, .85fr);
+
+    align-items: center;
+
+    gap: clamp(45px, 7vw, 95px);
+}
+
+.quote-hero__content {
+    min-width: 0;
+}
+
+.quote-hero__eyebrow,
+.quote-benefits__eyebrow {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 11px;
+
+    color: var(--naksh-orange);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 1.2px;
+}
+
+.quote-hero__eyebrow span,
+.quote-benefits__eyebrow span {
+    width: 29px;
+    height: 2px;
+
+    flex: 0 0 29px;
+
+    background: var(--naksh-orange);
+}
+
+.quote-hero h1 {
+    max-width: 800px;
+
+    margin: 0;
+
+    color: var(--naksh-navy);
+
+    font-size:
+        clamp(38px, 4.8vw, 65px);
+
+    line-height: 1.04;
+
+    letter-spacing: -1.8px;
+}
+
+.quote-hero__content>p {
+    max-width: 650px;
+
+    margin: 21px 0 0;
+
+    color: var(--naksh-muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* BREADCRUMB */
+
+.quote-hero__breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-top: 24px;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.quote-hero__breadcrumb a {
+    color: var(--naksh-navy);
+
+    text-decoration: none;
+}
+
+.quote-hero__breadcrumb span {
+    color: var(--naksh-orange);
+}
+
+.quote-hero__breadcrumb span:last-child {
+    color: var(--naksh-muted);
+}
+
+
+/* HERO VISUAL */
+
+.quote-hero__visual {
+    min-width: 0;
+}
+
+.quote-hero__visual-box {
+    position: relative;
+
+    width: min(100%, 410px);
+    min-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-left: auto;
+
+    padding: 30px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(145deg,
+            var(--naksh-navy),
+            var(--naksh-navy-dark));
+
+    box-shadow:
+        0 25px 55px rgba(7, 54, 109, .17);
+}
+
+/* =========================================================
+   QUOTE HERO ELEVATOR IMAGE
+========================================================= */
+
+.quote-hero__image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 0;
+}
+
+
+/* Dark overlay for text readability */
+.quote-hero__image-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(90deg,
+            rgba(5, 38, 80, 0.94) 0%,
+            rgba(7, 54, 109, 0.82) 48%,
+            rgba(7, 54, 109, 0.30) 100%);
+}
+
+
+/* Keep icon above image */
+.quote-hero__icon {
+    position: relative;
+
+    z-index: 3;
+}
+
+
+/* Keep text above image */
+.quote-hero__visual-content {
+    position: relative;
+
+    z-index: 3;
+}
+
+
+/* Keep watermark above image */
+.quote-hero__watermark {
+    z-index: 3;
+}
+
+.quote-hero__visual-box::before {
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    top: -70px;
+    right: -70px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(247, 147, 0, .10);
+
+    z-index: 2;
+}
+
+.quote-hero__icon {
+    position: relative;
+    z-index: 2;
+
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: var(--naksh-orange);
+
+    color: #fff;
+
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.quote-hero__visual-content {
+    position: relative;
+    z-index: 2;
+}
+
+.quote-hero__visual-content small,
+.quote-hero__visual-content strong,
+.quote-hero__visual-content p {
+    display: block;
+}
+
+.quote-hero__visual-content small {
+    margin-bottom: 7px;
+
+    color: var(--naksh-orange);
+
+    font-size: 8px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.quote-hero__visual-content strong {
+    color: #fff;
+
+    font-size: 25px;
+
+    line-height: 1.2;
+}
+
+.quote-hero__visual-content p {
+    margin: 10px 0 0;
+
+    color:
+        rgba(255, 255, 255, .62);
+
+    font-size: 8px;
+}
+
+.quote-hero__watermark {
+    position: absolute;
+
+    right: 20px;
+    bottom: 13px;
+
+    color:
+        rgba(255, 255, 255, .035);
+
+    font-size: 45px;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.quote-benefits {
+    padding: 90px 0;
+
+    background: #fff;
+}
+
+.quote-benefits__heading {
+    max-width: 680px;
+
+    margin-bottom: 38px;
+}
+
+.quote-benefits__heading h2 {
+    margin: 0;
+
+    color: var(--naksh-navy);
+
+    font-size:
+        clamp(31px, 3.5vw, 47px);
+
+    line-height: 1.1;
+}
+
+.quote-benefits__heading>p {
+    max-width: 580px;
+
+    margin: 15px 0 0;
+
+    color: var(--naksh-muted);
+
+    font-size: 11px;
+
+    line-height: 1.75;
+}
+
+.quote-benefits__grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+.quote-benefit-card {
+    position: relative;
+
+    min-width: 0;
+
+    padding: 25px;
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--naksh-border);
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.quote-benefit-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(7, 54, 109, .08);
+}
+
+.quote-benefit-card__number {
+    width: 41px;
+    height: 41px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 30px;
+
+    border-radius: 9px;
+
+    background:
+        rgba(247, 147, 0, .11);
+
+    color: var(--naksh-orange);
+
+    font-size: 9px;
+    font-weight: 900;
+}
+
+.quote-benefit-card h3 {
+    margin: 0;
+
+    color: var(--naksh-navy);
+
+    font-size: 15px;
+
+    line-height: 1.35;
+}
+
+.quote-benefit-card p {
+    margin: 8px 0 0;
+
+    color: var(--naksh-muted);
+
+    font-size: 9px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .quote-benefits__grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .quote-hero {
+        padding: 70px 0;
+    }
+
+    .quote-hero__grid {
+        grid-template-columns: 1fr;
+
+        gap: 42px;
+    }
+
+    .quote-hero__visual-box {
+        width: min(100%, 600px);
+
+        margin-left: 0;
+    }
+
+    .quote-benefits {
+        padding: 70px 0;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .quote-hero {
+        padding: 55px 0;
+    }
+
+    .quote-hero h1 {
+        font-size:
+            clamp(35px, 11vw, 48px);
+
+        letter-spacing: -1px;
+    }
+
+    .quote-hero__content>p {
+        font-size: 12px;
+    }
+
+    .quote-hero__visual-box {
+        min-height: 230px;
+
+        padding: 23px;
+
+        border-radius: 13px;
+    }
+
+
+
+    .quote-benefits {
+        padding: 58px 0;
+    }
+
+    .quote-benefits__grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .quote-hero__image {
+        object-position: center;
+    }
+
+    .quote-hero__image-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(5, 38, 80, 0.92) 0%,
+                rgba(7, 54, 109, 0.65) 100%
+            );
+    }
+
+}
+
