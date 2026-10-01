@@ -3,7 +3,7 @@
     id="nakshSiteIntro"
     aria-hidden="true"
 >
-    {{-- Initial white logo loader --}}
+    {{-- STEP 1 : WHITE LOGO LOADER --}}
     <div class="naksh-site-intro__loader">
 
         <div class="naksh-site-intro__logo-wrap">
@@ -31,37 +31,24 @@
     </div>
 
 
-    {{-- Elevator entrance --}}
-    <div class="naksh-elevator-intro">
+    {{-- STEP 2 : BLUE ELEVATOR DOORS --}}
+    <div class="naksh-blue-intro">
 
-        <div class="naksh-elevator-intro__top">
-            <span class="naksh-elevator-intro__floor">G</span>
-            <span class="naksh-elevator-intro__arrow">▲</span>
-        </div>
+        <div
+            class="
+                naksh-blue-intro__door
+                naksh-blue-intro__door--left
+            "
+        ></div>
 
-        <div class="naksh-elevator-intro__frame">
+        <div
+            class="
+                naksh-blue-intro__door
+                naksh-blue-intro__door--right
+            "
+        ></div>
 
-            <div
-                class="
-                    naksh-elevator-intro__door
-                    naksh-elevator-intro__door--left
-                "
-            >
-                <span class="naksh-elevator-intro__metal"></span>
-            </div>
-
-            <div
-                class="
-                    naksh-elevator-intro__door
-                    naksh-elevator-intro__door--right
-                "
-            >
-                <span class="naksh-elevator-intro__metal"></span>
-            </div>
-
-            <div class="naksh-elevator-intro__seam"></div>
-
-        </div>
+        <div class="naksh-blue-intro__seam"></div>
 
     </div>
 

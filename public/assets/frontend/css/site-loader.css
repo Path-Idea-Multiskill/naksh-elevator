@@ -1,14 +1,46 @@
 /* =========================================================
-   NAKSH ELEVATOR - WEBSITE INTRO
+   NAKSH ELEVATOR - FIRST VISIT INTRO
 ========================================================= */
+
+/* .naksh-site-intro {
+    position: fixed;
+    inset: 0;
+
+    z-index: 999999;
+
+    overflow: hidden;
+
+    background: transparent;
+
+    pointer-events: all;
+} */
 
 .naksh-site-intro {
     position: fixed;
     inset: 0;
+
     z-index: 999999;
+
     overflow: hidden;
-    background: #fff;
+
+    /* IMPORTANT:
+       Logo disappear hone ke baad
+       blank white screen visible rahegi */
+    background: #ffffff;
+
     pointer-events: all;
+}
+
+/*
+=========================================================
+WHEN BLUE DOORS START OPENING
+Remove white intro background so actual website
+becomes visible behind the opening doors.
+=========================================================
+*/
+
+.naksh-site-intro.is-door-opening {
+    background: transparent;
 }
 
 body.naksh-intro-active {
@@ -17,25 +49,45 @@ body.naksh-intro-active {
 
 
 /* =========================================================
-   LOGO LOADER
+   STEP 1 : WHITE LOGO LOADER
 ========================================================= */
 
-.naksh-site-intro__loader {
+/* .naksh-site-intro__loader {
     position: absolute;
     inset: 0;
-    z-index: 20;
+
+    z-index: 30;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    background: #fff;
+    background: #ffffff;
 
     transition:
-        opacity .55s ease,
-        visibility .55s ease,
-        transform .55s ease;
+        opacity .45s ease,
+        visibility .45s ease,
+        transform .45s ease;
+} */
+
+.naksh-site-intro__loader {
+    position: absolute;
+    inset: 0;
+
+    z-index: 30;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    transition:
+        opacity .32s ease,
+        visibility .32s ease,
+        transform .32s ease;
 }
 
 .naksh-site-intro__logo-wrap {
@@ -55,14 +107,15 @@ body.naksh-intro-active {
 
     width: 118px;
     max-height: 92px;
+
     object-fit: contain;
 
     animation:
-        nakshLogoPulse 1.6s ease-in-out infinite;
+        nakshLogoPulse 1.5s ease-in-out infinite;
 }
 
 
-/* circular loader */
+/* spinner */
 
 .naksh-site-intro__spinner {
     position: absolute;
@@ -70,12 +123,12 @@ body.naksh-intro-active {
 
     border-radius: 50%;
 
-    border: 2px solid #e9eef5;
+    border: 2px solid #e8edf4;
     border-top-color: #f79300;
     border-right-color: #07366d;
 
     animation:
-        nakshSpinner 1.1s linear infinite;
+        nakshSpinner 1.05s linear infinite;
 }
 
 .naksh-site-intro__spinner::before {
@@ -86,7 +139,8 @@ body.naksh-intro-active {
 
     border-radius: inherit;
 
-    border: 1px solid rgba(7, 54, 109, .08);
+    border:
+        1px solid rgba(7, 54, 109, .08);
 }
 
 
@@ -99,7 +153,9 @@ body.naksh-intro-active {
     margin-top: 18px;
 
     background: #e9edf3;
+
     overflow: hidden;
+
     border-radius: 50px;
 }
 
@@ -109,14 +165,13 @@ body.naksh-intro-active {
     width: 45%;
     height: 100%;
 
-    background: linear-gradient(
-        90deg,
-        #07366d,
-        #f79300
-    );
+    background:
+        linear-gradient(90deg,
+            #07366d,
+            #f79300);
 
     animation:
-        nakshLoadingLine 1.25s ease-in-out infinite;
+        nakshLoadingLine 1.2s ease-in-out infinite;
 }
 
 .naksh-site-intro__loader p {
@@ -132,210 +187,133 @@ body.naksh-intro-active {
 }
 
 
-/* loader hide */
+/* logo loader hide */
 
-.naksh-site-intro.is-loading-complete
-.naksh-site-intro__loader {
+.naksh-site-intro.is-loading-complete .naksh-site-intro__loader {
     opacity: 0;
+
     visibility: hidden;
-    transform: scale(1.04);
+
+    transform: scale(1.035);
 }
 
 
 /* =========================================================
-   ELEVATOR BACKGROUND
+   STEP 2 : BLUE SCREEN
 ========================================================= */
 
-.naksh-elevator-intro {
+.naksh-blue-intro {
     position: absolute;
     inset: 0;
 
-    z-index: 10;
-
-    display: flex;
-    flex-direction: column;
-
-    background:
-        linear-gradient(
-            180deg,
-            #09121c 0%,
-            #111d29 100%
-        );
-
-    opacity: 0;
-
-    transform: scale(1.025);
-
-    transition:
-        opacity .6s ease,
-        transform 1s cubic-bezier(.22,.61,.36,1);
-}
-
-.naksh-site-intro.is-loading-complete
-.naksh-elevator-intro {
-    opacity: 1;
-    transform: scale(1);
-}
-
-
-/* =========================================================
-   TOP ELEVATOR INDICATOR
-========================================================= */
-
-.naksh-elevator-intro__top {
-    position: absolute;
-
-    z-index: 8;
-
-    top: 5.5%;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    min-width: 112px;
-    height: 48px;
-
-    padding: 0 20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    background: #05080b;
-
-    border:
-        1px solid rgba(255,255,255,.18);
-
-    border-radius: 5px;
-
-    box-shadow:
-        0 8px 30px rgba(0,0,0,.28);
-}
-
-.naksh-elevator-intro__floor {
-    color: #67e580;
-
-    font-size: 25px;
-    font-weight: 700;
-
-    text-shadow:
-        0 0 12px rgba(103,229,128,.45);
-}
-
-.naksh-elevator-intro__arrow {
-    color: #f79300;
-
-    font-size: 17px;
-
-    animation:
-        nakshIndicator 1s ease-in-out infinite;
-}
-
-
-/* =========================================================
-   ELEVATOR FRAME
-========================================================= */
-
-.naksh-elevator-intro__frame {
-    position: absolute;
-
-    left: 50%;
-    bottom: 0;
-
-    width: min(92vw, 1180px);
-    height: 88vh;
-
-    transform: translateX(-50%);
+    z-index: 20;
 
     overflow: hidden;
 
-    border-top:
-        16px solid #202a34;
-
-    border-left:
-        22px solid #202a34;
-
-    border-right:
-        22px solid #202a34;
-
-    box-shadow:
-        0 0 0 1px #56616b,
-        0 -20px 80px rgba(0,0,0,.3);
+    pointer-events: none;
 }
 
 
-/* =========================================================
-   ELEVATOR DOORS
-========================================================= */
+/*
+|--------------------------------------------------------------------------
+| BLUE DOORS
+|--------------------------------------------------------------------------
+|
+| Initially doors screen ke TOP ke bahar rahenge.
+| Logo loader complete hone ke baad top -> bottom slide honge.
+|
+*/
 
-.naksh-elevator-intro__door {
+/* .naksh-blue-intro__door {
     position: absolute;
 
     top: 0;
     bottom: 0;
 
-    width: 50.15%;
-
-    overflow: hidden;
+    width: 50%;
 
     background:
         linear-gradient(
-            90deg,
-            #929ba2 0%,
-            #e6eaec 18%,
-            #a6afb5 48%,
-            #f0f2f3 72%,
-            #929ba2 100%
+            180deg,
+            #07366d 0%,
+            #062f60 55%,
+            #052650 100%
         );
 
+    transform: translateY(-100%);
+
+    will-change: transform;
+
     box-shadow:
-        inset 0 0 35px rgba(0,0,0,.12);
+        inset 0 0 80px rgba(0, 0, 0, .08);
+} */
+
+.naksh-blue-intro__door {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    width: 50%;
+
+    /*
+     * Naksh logo navy blue.
+     * Simple clean background.
+     * Koi elevator graphic nahi.
+     */
+    background: #07366d;
+
+    /*
+     * Initially complete blue screen
+     * viewport ke TOP ke bahar hai.
+     */
+    transform: translateY(-101%);
 
     will-change: transform;
 
     transition:
-        transform 1.65s
-        cubic-bezier(.76,0,.24,1);
+        transform 1s cubic-bezier(.76, 0, .24, 1);
 }
 
-.naksh-elevator-intro__door--left {
+/* .naksh-blue-intro__door--left {
     left: 0;
 
-    border-right:
-        1px solid rgba(0,0,0,.45);
+    transition:
+        transform .85s cubic-bezier(.76, 0, .24, 1);
 }
 
-.naksh-elevator-intro__door--right {
+.naksh-blue-intro__door--right {
     right: 0;
 
-    border-left:
-        1px solid rgba(255,255,255,.55);
+    transition:
+        transform .85s cubic-bezier(.76, 0, .24, 1);
+} */
+
+
+.naksh-blue-intro__door--left {
+    left: 0;
 }
 
 
-/* brushed metal lines */
+.naksh-blue-intro__door--right {
+    right: 0;
+}
 
-.naksh-elevator-intro__metal {
-    position: absolute;
-    inset: 0;
+/* =========================================================
+   BLUE TOP -> BOTTOM ENTER
+========================================================= */
 
-    opacity: .35;
 
-    background:
-        repeating-linear-gradient(
-            90deg,
-            rgba(255,255,255,.15) 0,
-            rgba(255,255,255,.15) 1px,
-            rgba(0,0,0,.035) 2px,
-            transparent 4px
-        );
+.naksh-site-intro.is-blue-entering .naksh-blue-intro__door {
+    transform: translateY(0);
 }
 
 
-/* dark centre line */
+/* =========================================================
+   CENTER SEAM
+========================================================= */
 
-.naksh-elevator-intro__seam {
+/* .naksh-blue-intro__seam {
     position: absolute;
 
     z-index: 5;
@@ -345,56 +323,183 @@ body.naksh-intro-active {
 
     left: 50%;
 
-    width: 3px;
-
-    transform: translateX(-50%);
+    width: 1px;
 
     background:
-        linear-gradient(
-            180deg,
-            #101820,
-            #000,
-            #101820
-        );
+        rgba(255, 255, 255, .15);
 
-    box-shadow:
-        0 0 12px rgba(0,0,0,.55);
+    opacity: 0;
+
+    transform:
+        translateX(-50%)
+        translateY(-100%);
 
     transition:
-        opacity .2s ease;
+        transform .85s cubic-bezier(.76, 0, .24, 1),
+        opacity .3s ease;
+} */
+
+.naksh-blue-intro__seam {
+    position: absolute;
+
+    z-index: 5;
+
+    top: 0;
+    bottom: 0;
+
+    left: 50%;
+
+    width: 1px;
+
+    background:
+        rgba(255, 255, 255, .18);
+
+    opacity: 0;
+
+    transform:
+        translateX(-50%) translateY(-101%);
+
+    transition:
+        transform 1s cubic-bezier(.76, 0, .24, 1),
+        opacity .25s ease;
+}
+
+/* .naksh-site-intro.is-blue-entering
+.naksh-blue-intro__seam {
+    transform:
+        translateX(-50%)
+        translateY(0);
+
+    opacity: 1;
+} */
+
+.naksh-site-intro.is-blue-entering .naksh-blue-intro__seam {
+    transform:
+        translateX(-50%) translateY(0);
+
+    opacity: 1;
+}
+
+/* =========================================================
+   BLUE SCREEN FULLY ARRIVED
+========================================================= */
+
+.naksh-site-intro.is-blue-ready .naksh-blue-intro__door {
+    transform: translateY(0);
 }
 
 
 /* =========================================================
-   OPENING STATE
+   STEP 3 : ELEVATOR DOORS OPEN
 ========================================================= */
 
-.naksh-site-intro.is-door-opening
-.naksh-elevator-intro__door--left {
-    transform: translateX(-101%);
+.naksh-site-intro.is-door-opening .naksh-blue-intro__door--left {
+    transform: translateX(-100%);
 }
 
-.naksh-site-intro.is-door-opening
-.naksh-elevator-intro__door--right {
-    transform: translateX(101%);
+.naksh-site-intro.is-door-opening .naksh-blue-intro__door--right {
+    transform: translateX(100%);
 }
 
-.naksh-site-intro.is-door-opening
-.naksh-elevator-intro__seam {
+.naksh-site-intro.is-door-opening .naksh-blue-intro__seam {
     opacity: 0;
 }
 
 
-/* entire intro remove */
+/* =========================================================
+   WEBSITE REVEAL
+========================================================= */
+
+/*
+Website actual me intro ke niche already loaded hai.
+
+Doors open hote hi transparent area badhta jayega,
+isliye website naturally reveal hogi.
+
+Slight premium fade/scale website ko aur smooth feel deta hai.
+*/
+
+/* body.naksh-intro-active> :not(.naksh-site-intro) {
+    transition:
+        opacity .9s ease,
+        filter .9s ease;
+}
+
+body.naksh-door-revealing> :not(.naksh-site-intro) {
+    opacity: .72;
+    filter: blur(1.5px);
+}
+
+body.naksh-intro-complete> :not(.naksh-site-intro) {
+    opacity: 1;
+    filter: blur(0);
+}
+
+body.naksh-intro-complete> :not(.naksh-site-intro) {
+    opacity: 1;
+    filter: none;
+} */
+
+/* =========================================================
+   WEBSITE REVEAL
+========================================================= */
+/* =========================================================
+   WEBSITE REVEAL
+========================================================= */
+
+body.naksh-intro-active> :not(.naksh-site-intro) {
+    transition:
+        opacity 1.15s cubic-bezier(.22, .61, .36, 1),
+        filter 1.15s cubic-bezier(.22, .61, .36, 1);
+
+    opacity: 1;
+}
+
+
+/*
+Door open hona start hote hi
+website light opacity me visible hogi
+*/
+body.naksh-door-revealing> :not(.naksh-site-intro) {
+    opacity: .58;
+    filter: blur(1.2px);
+}
+
+
+/*
+Door open hote-hote website
+smoothly full visible hone lagegi
+*/
+body.naksh-website-revealing> :not(.naksh-site-intro) {
+    opacity: 1;
+    filter: blur(0);
+}
+
+
+/*
+Doors completely open hone ke baad
+website 100% clear
+*/
+body.naksh-intro-complete> :not(.naksh-site-intro) {
+    opacity: 1;
+    filter: blur(0);
+}
+
+
+/* =========================================================
+   FINISH INTRO
+========================================================= */
 
 .naksh-site-intro.is-finished {
     opacity: 0;
+
     visibility: hidden;
+
     pointer-events: none;
 
     transition:
-        opacity .35s ease,
-        visibility .35s ease;
+        opacity .25s ease,
+        visibility .25s ease;
 }
 
 
@@ -418,7 +523,7 @@ body.naksh-intro-active {
     }
 
     50% {
-        transform: scale(1.035);
+        transform: scale(1.04);
     }
 
 }
@@ -435,19 +540,6 @@ body.naksh-intro-active {
 
 }
 
-@keyframes nakshIndicator {
-
-    0%,
-    100% {
-        opacity: .45;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-}
-
 
 /* =========================================================
    TABLET
@@ -455,13 +547,9 @@ body.naksh-intro-active {
 
 @media (max-width: 991px) {
 
-    .naksh-elevator-intro__frame {
-        width: 94vw;
-        height: 86vh;
-
-        border-left-width: 15px;
-        border-right-width: 15px;
-        border-top-width: 13px;
+    .naksh-site-intro__logo-wrap {
+        width: 165px;
+        height: 165px;
     }
 
 }
@@ -487,62 +575,29 @@ body.naksh-intro-active {
         width: 120px;
     }
 
-    .naksh-elevator-intro__top {
-        top: 4%;
+    .naksh-site-intro__loader p {
+        font-size: 9px;
 
-        min-width: 90px;
-        height: 42px;
-
-        padding: 0 15px;
-    }
-
-    .naksh-elevator-intro__floor {
-        font-size: 21px;
-    }
-
-    .naksh-elevator-intro__frame {
-        width: 96vw;
-        height: 87vh;
-
-        border-left-width: 9px;
-        border-right-width: 9px;
-        border-top-width: 10px;
+        letter-spacing: 1.6px;
     }
 
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   REDUCED MOTION
 ========================================================= */
-
-@media (max-width: 390px) {
-
-    .naksh-elevator-intro__frame {
-        width: 98vw;
-    }
-
-    .naksh-site-intro__loader p {
-        font-size: 8px;
-        letter-spacing: 1.5px;
-    }
-
-}
-
-
-/* accessibility */
 
 @media (prefers-reduced-motion: reduce) {
 
     .naksh-site-intro__spinner,
     .naksh-site-intro__logo,
-    .naksh-site-intro__loading-line span,
-    .naksh-elevator-intro__arrow {
+    .naksh-site-intro__loading-line span {
         animation: none;
     }
 
-    .naksh-elevator-intro__door {
-        transition-duration: .4s;
+    .naksh-blue-intro__door {
+        transition-duration: .35s;
     }
 
 }
