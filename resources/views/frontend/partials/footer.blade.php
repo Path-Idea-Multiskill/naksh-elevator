@@ -92,11 +92,11 @@
 
                 @foreach($footerElevatorTypes as $type)
 
-                    <li>
+                    <!-- <li> -->
                         <a href="{{ route('elevator-types.show', $type->slug) }}">
                             {{ $type->name }}
                         </a>
-                    </li>
+                    <!-- </li> -->
 
                 @endforeach
 
