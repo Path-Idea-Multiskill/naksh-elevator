@@ -8,7 +8,7 @@
 
                 <div class="home-elevators__eyebrow">
                     <span></span>
-                    OUR ELEVATOR SOLUTIONS test1234
+                    OUR ELEVATOR SOLUTIONS
                 </div>
 
                 <h2>
