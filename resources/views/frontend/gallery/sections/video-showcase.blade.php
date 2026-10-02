@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="gallery-videos__hint">
-                    <span>03</span>
+                    <span>06</span>
                     Video Experiences
                 </div>
 
@@ -45,19 +45,10 @@
 
                     <div class="gallery-video-card__media">
 
-                        <video
-                            class="gallery-video-card__video"
-                            controls
-                            muted
-                            playsinline
-                            preload="metadata"
-                        >
-                            <source
-                                src="{{ asset(
-                                    'videos/lift-explore.mp4'
-                                ) }}"
-                                type="video/mp4"
-                            >
+                        <video class="gallery-video-card__video" controls muted playsinline preload="metadata">
+                            <source src="{{ asset(
+    'videos/lift-explore.mp4'
+) }}" type="video/mp4">
                         </video>
 
                         <span class="gallery-video-card__number">
@@ -96,19 +87,10 @@
 
                     <div class="gallery-video-card__media">
 
-                        <video
-                            class="gallery-video-card__video"
-                            controls
-                            muted
-                            playsinline
-                            preload="metadata"
-                        >
-                            <source
-                                src="{{ asset(
-                                    'videos/lift.mp4'
-                                ) }}"
-                                type="video/mp4"
-                            >
+                        <video class="gallery-video-card__video" controls muted playsinline preload="metadata">
+                            <source src="{{ asset(
+    'videos/lift.mp4'
+) }}" type="video/mp4">
                         </video>
 
                         <span class="gallery-video-card__number">
@@ -147,19 +129,10 @@
 
                     <div class="gallery-video-card__media">
 
-                        <video
-                            class="gallery-video-card__video"
-                            controls
-                            muted
-                            playsinline
-                            preload="metadata"
-                        >
-                            <source
-                                src="{{ asset(
-                                    'videos/open-lift-door.mp4'
-                                ) }}"
-                                type="video/mp4"
-                            >
+                        <video class="gallery-video-card__video" controls muted playsinline preload="metadata">
+                            <source src="{{ asset(
+    'videos/open-lift-door.mp4'
+) }}" type="video/mp4">
                         </video>
 
                         <span class="gallery-video-card__number">
@@ -181,6 +154,132 @@
 
                             <h3>
                                 Smooth Elevator Door Opening
+                            </h3>
+                        </div>
+
+                        <span class="gallery-video-card__arrow">
+                            ↗
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                {{-- VIDEO 04 --}}
+                <article class="gallery-video-card">
+
+                    <div class="gallery-video-card__media">
+
+                        <video class="gallery-video-card__video" controls muted playsinline preload="metadata">
+                            <source src="{{ asset(
+    'videos/cabin-control-panel.mp4'
+) }}" type="video/mp4">
+                        </video>
+
+                        <span class="gallery-video-card__number">
+                            04
+                        </span>
+
+                        <span class="gallery-video-card__tag">
+                            CABIN CONTROLS
+                        </span>
+
+                    </div>
+
+                    <div class="gallery-video-card__body">
+
+                        <div>
+                            <span class="gallery-video-card__label">
+                                MODERN • FUNCTIONAL • SAFE
+                            </span>
+
+                            <h3>
+                                Modern Elevator Cabin & Control Panel
+                            </h3>
+                        </div>
+
+                        <span class="gallery-video-card__arrow">
+                            ↗
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                {{-- VIDEO 05 --}}
+                <article class="gallery-video-card">
+
+                    <div class="gallery-video-card__media">
+
+                        <video class="gallery-video-card__video" controls muted playsinline preload="metadata">
+                            <source src="{{ asset(
+    'videos/designer-elevator-door.mp4'
+) }}" type="video/mp4">
+                        </video>
+
+                        <span class="gallery-video-card__number">
+                            05
+                        </span>
+
+                        <span class="gallery-video-card__tag">
+                            DESIGNER DOORS
+                        </span>
+
+                    </div>
+
+                    <div class="gallery-video-card__body">
+
+                        <div>
+                            <span class="gallery-video-card__label">
+                                STYLE • DESIGN • ELEGANCE
+                            </span>
+
+                            <h3>
+                                Designer Elevator Door Finish
+                            </h3>
+                        </div>
+
+                        <span class="gallery-video-card__arrow">
+                            ↗
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                {{-- VIDEO 06 --}}
+                <article class="gallery-video-card">
+
+                    <div class="gallery-video-card__media">
+
+                        <video class="gallery-video-card__video" controls muted playsinline preload="metadata">
+                            <source src="{{ asset(
+    'videos/glass-elevator-door.mp4'
+) }}" type="video/mp4">
+                        </video>
+
+                        <span class="gallery-video-card__number">
+                            06
+                        </span>
+
+                        <span class="gallery-video-card__tag">
+                            GLASS DOOR
+                        </span>
+
+                    </div>
+
+                    <div class="gallery-video-card__body">
+
+                        <div>
+                            <span class="gallery-video-card__label">
+                                MODERN • CLEAN • PREMIUM
+                            </span>
+
+                            <h3>
+                                Stainless Steel Glass Elevator Door
                             </h3>
                         </div>
 
