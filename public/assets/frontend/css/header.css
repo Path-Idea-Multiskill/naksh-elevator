@@ -205,7 +205,7 @@
    MOBILE DRAWER
 ========================================================= */
 
-.site-mobile-menu {
+/* .site-mobile-menu {
     position: fixed;
 
     top: 0;
@@ -229,10 +229,52 @@
 
     transition:
         transform .25s ease;
+} */
+
+.site-mobile-menu {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: min(88vw, 360px);
+    height: 100dvh;
+
+    z-index: 10002;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    box-shadow:
+        -15px 0 45px rgba(5, 38, 80, .18);
+
+    transform: translate3d(100%, 0, 0);
+
+    visibility: hidden;
+
+    transition:
+        transform .32s cubic-bezier(.22, .61, .36, 1),
+        visibility .32s ease;
+
+    will-change: transform;
+
+    overscroll-behavior: contain;
 }
 
-.site-mobile-menu.open {
+/* .site-mobile-menu.open {
     transform: translateX(0);
+} */
+
+.site-mobile-menu.open {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
 }
 
 .site-mobile-menu-header {
@@ -268,7 +310,9 @@
     line-height: 1;
 }
 
-.site-mobile-nav {
+
+
+/* .site-mobile-nav {
     display: grid;
 
     margin-top: 15px;
@@ -284,6 +328,47 @@
 
     font-size: 13px;
     font-weight: 700;
+} */
+
+
+
+.site-mobile-nav {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    margin-top: 15px;
+}
+
+.site-mobile-nav a {
+    width: 100%;
+
+    padding: 15px 3px;
+
+    border-bottom:
+        1px solid #edf1f5;
+
+    color: #334155;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.site-mobile-nav a.active {
+    color: var(--naksh-orange);
+}
+
+.site-mobile-menu>.site-quote-btn {
+    width: 100%;
+
+    min-height: 46px;
+
+    display: flex;
+
+    margin-top: 22px;
+
+    flex-shrink: 0;
 }
 
 .site-mobile-nav a:hover {
@@ -350,13 +435,44 @@
         height: 48px;
     }
 
-    .site-quote-btn {
+    /* .site-quote-btn {
         display: none;
+    } */
+
+    .site-navbar-actions>.site-quote-btn {
+        display: none;
+    }
+
+    .site-navbar-inner {
+        width: calc(100% - 28px);
+
+        min-height: 68px;
+
+        gap: 12px;
+    }
+
+    .site-logo {
+        min-width: 0;
+        max-width: calc(100% - 58px);
+    }
+
+    .site-logo img {
+        width: auto;
+        max-width: 130px;
+        height: 46px;
+    }
+
+    .site-navbar-actions {
+        flex: 0 0 auto;
+    }
+
+    .site-menu-toggle {
+        flex: 0 0 42px;
     }
 }
 
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
 
     .site-topbar-left {
         min-width: 0;
@@ -371,4 +487,108 @@
 
         white-space: nowrap;
     }
+} */
+
+@media (max-width: 480px) {
+
+    .site-topbar {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .site-topbar-inner {
+        width: calc(100% - 24px);
+
+        gap: 8px;
+    }
+
+    .site-topbar-left {
+        flex: 1 1 auto;
+
+        min-width: 0;
+    }
+
+    .site-topbar-right {
+        flex: 0 0 auto;
+
+        min-width: 0;
+    }
+
+    .site-topbar-left a {
+        display: block;
+
+        max-width: 145px;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        white-space: nowrap;
+    }
+
+    .site-topbar-right a {
+        white-space: nowrap;
+    }
+
+}
+
+/* @media (max-width: 767px) {
+
+    .site-header {
+        position: sticky;
+
+        top: 0;
+
+        z-index: 1000;
+
+        width: 100%;
+
+        background: #ffffff;
+    }
+
+    .site-navbar {
+        position: relative;
+
+        z-index: auto;
+
+        box-shadow:
+            0 5px 18px rgba(5, 38, 80, .08);
+    }
+
+} */
+
+/* =========================================================
+   MOBILE FIXED HEADER
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .site-header {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+        right: 0;
+
+        z-index: 10000;
+
+        width: 100%;
+
+        background: #ffffff;
+
+        box-shadow:
+            0 4px 18px rgba(5, 38, 80, .08);
+    }
+
+
+    .site-navbar {
+        position: relative;
+
+        z-index: auto;
+
+        width: 100%;
+
+        background: #ffffff;
+    }
+
 }

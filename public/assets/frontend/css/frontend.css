@@ -32,13 +32,41 @@
 }
 
 
+/* html {
+    scroll-behavior: smooth;
+} */
+
 html {
     scroll-behavior: smooth;
+
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: hidden;
 }
 
+/* body {
+    margin: 0;
+
+    background: #ffffff;
+    color: var(--naksh-text);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    -webkit-font-smoothing:
+        antialiased;
+} */
 
 body {
     margin: 0;
+
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: hidden;
 
     background: #ffffff;
     color: var(--naksh-text);
@@ -52,6 +80,12 @@ body {
         antialiased;
 }
 
+.site-main {
+    width: 100%;
+    max-width: 100%;
+    min-height: 50vh;
+    overflow-x: hidden;
+}
 
 body.menu-open {
     overflow: hidden;
@@ -86,18 +120,16 @@ button {
 
 
 .site-container {
-    width: min(
-        calc(100% - 40px),
-        var(--site-container)
-    );
+    width: min(calc(100% - 40px),
+            var(--site-container));
 
     margin-inline: auto;
 }
 
 
-.site-main {
+/* .site-main {
     min-height: 50vh;
-}
+} */
 
 
 .site-menu-overlay {
@@ -105,19 +137,21 @@ button {
 
     inset: 0;
 
-    z-index: 998;
+    z-index: 9999;
 
     visibility: hidden;
 
+    /* background: transparent; */
     background:
-        rgba(5, 38, 80, .55);
+        rgba(0, 0, 0, .12);
 
     opacity: 0;
 
     transition:
-        opacity .25s ease,
-        visibility .25s ease;
+        opacity .3s ease,
+        visibility .3s ease;
 }
+
 
 
 .site-menu-overlay.show {
@@ -130,9 +164,19 @@ button {
 @media (max-width: 767px) {
 
     .site-container {
-        width: min(
-            calc(100% - 28px),
-            var(--site-container)
-        );
+        width: min(calc(100% - 28px),
+                var(--site-container));
     }
+}
+
+/* =========================================================
+   MOBILE FIXED HEADER SPACE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    body {
+        padding-top: 106px;
+    }
+
 }

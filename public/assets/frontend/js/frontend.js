@@ -22,6 +22,31 @@ document.addEventListener(
                 "siteMenuOverlay"
             );
 
+        // document.addEventListener(
+        //     "click",
+        //     function (event) {
+
+        //         console.log(
+        //             "CLICKED ELEMENT:",
+        //             event.target
+        //         );
+
+        //         console.log(
+        //             "CLOSEST LINK:",
+        //             event.target.closest("a")
+        //         );
+
+        //         console.log(
+        //             "INSIDE MOBILE MENU:",
+        //             !!event.target.closest(
+        //                 "#siteMobileMenu"
+        //             )
+        //         );
+
+        //     }
+        // );
+
+
 
         function openMenu() {
 
@@ -97,6 +122,19 @@ document.addEventListener(
                 closeMenu
             );
         }
+
+        /*
+|--------------------------------------------------------------------------
+| MOBILE MENU LINKS
+|--------------------------------------------------------------------------
+|
+| Menu link click:
+| 1. Drawer close hoga
+| 2. Browser href wale page par navigate karega
+|
+*/
+
+
 
 
         document.addEventListener(
