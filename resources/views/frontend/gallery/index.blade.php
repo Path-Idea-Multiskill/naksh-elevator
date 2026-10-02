@@ -15,19 +15,17 @@
 
 @push('styles')
 
-<link
-    rel="stylesheet"
-    href="{{ asset(
+    <link rel="stylesheet" href="{{ asset(
         'assets/frontend/css/gallery/index.css'
-    ) }}"
->
+    ) }}">
 
-<link
-    rel="stylesheet"
-    href="{{ asset(
+    <link rel="stylesheet" href="{{ asset(
         'assets/frontend/css/components/cta.css'
-    ) }}"
->
+    ) }}">
+
+    <link rel="stylesheet" href="{{ asset(
+        'assets/frontend/css/gallery/video-showcase.css'
+    ) }}">
 
 @endpush
 
@@ -52,6 +50,11 @@
         'frontend.gallery.sections.gallery-grid'
     )
 
+    {{-- VIDEO SHOWCASE --}}
+    @include(
+        'frontend.gallery.sections.video-showcase'
+    )
+
 
     {{-- CTA --}}
     @include(
@@ -70,11 +73,8 @@
 
 @push('scripts')
 
-<script
-    src="{{ asset(
+    <script src="{{ asset(
         'assets/frontend/js/gallery/index.js'
-    ) }}"
-    defer
-></script>
+    ) }}" defer></script>
 
 @endpush
