@@ -36,6 +36,42 @@
     color: var(--naksh-orange);
 }
 
+/* =========================================================
+   TOPBAR PHONE NUMBERS
+========================================================= */
+
+.site-topbar-right {
+    display: flex;
+    align-items: center;
+
+    min-width: 0;
+}
+
+.site-topbar-phones {
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+
+    min-width: 0;
+
+    white-space: nowrap;
+}
+
+.site-topbar-phones a {
+    display: inline-block;
+
+    color: inherit;
+
+    white-space: nowrap;
+}
+
+.site-topbar-phone-separator {
+    flex: 0 0 auto;
+
+    color: rgba(255, 255, 255, .75);
+}
+
 
 /* =========================================================
    NAVBAR
@@ -530,6 +566,24 @@
         white-space: nowrap;
     }
 
+    .site-topbar-phones {
+        gap: 2px;
+
+        max-width: 100%;
+
+        white-space: nowrap;
+    }
+
+    .site-topbar-phones a {
+        font-size: 9px;
+
+        white-space: nowrap;
+    }
+
+    .site-topbar-phone-separator {
+        font-size: 9px;
+    }
+
 }
 
 /* @media (max-width: 767px) {
@@ -589,6 +643,35 @@
         width: 100%;
 
         background: #ffffff;
+    }
+
+}
+
+/* =========================================================
+   VERY SMALL MOBILE TOPBAR
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .site-topbar-inner {
+        width: calc(100% - 16px);
+
+        gap: 5px;
+    }
+
+    .site-topbar-left a {
+        max-width: 105px;
+
+        font-size: 8px;
+    }
+
+    .site-topbar-phones {
+        gap: 1px;
+    }
+
+    .site-topbar-phones a,
+    .site-topbar-phone-separator {
+        font-size: 8px;
     }
 
 }

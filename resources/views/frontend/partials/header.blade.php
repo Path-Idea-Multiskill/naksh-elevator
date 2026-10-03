@@ -30,7 +30,7 @@
             </div>
 
 
-            <div class="site-topbar-right">
+            <!-- <div class="site-topbar-right">
 
                 @if($settings?->primary_phone)
 
@@ -44,6 +44,62 @@
                                                                                                                                     }}">
                                 {{ $settings->primary_phone }}
                             </a>
+
+                @endif
+
+            </div> -->
+
+            <div class="site-topbar-right">
+
+                @if(
+                        $settings?->primary_phone ||
+                        $settings?->secondary_phone
+                    )
+
+                    <div class="site-topbar-phones">
+
+                        @if($settings?->primary_phone)
+
+                                    <a href="tel:{{
+                            preg_replace(
+                                '/[^0-9+]/',
+                                '',
+                                $settings->primary_phone
+                            )
+                                    }}">
+                                        {{ $settings->primary_phone }}
+                                    </a>
+
+                        @endif
+
+
+                        @if(
+                                $settings?->primary_phone &&
+                                $settings?->secondary_phone
+                            )
+
+                            <span class="site-topbar-phone-separator">
+                                ,
+                            </span>
+
+                        @endif
+
+
+                        @if($settings?->secondary_phone)
+
+                                    <a href="tel:{{
+                            preg_replace(
+                                '/[^0-9+]/',
+                                '',
+                                $settings->secondary_phone
+                            )
+                                    }}">
+                                        {{ $settings->secondary_phone }}
+                                    </a>
+
+                        @endif
+
+                    </div>
 
                 @endif
 
