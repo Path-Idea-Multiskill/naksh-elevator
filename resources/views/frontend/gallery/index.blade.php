@@ -38,6 +38,11 @@
         'frontend.gallery.sections.hero'
     )
 
+    {{-- VIDEO SHOWCASE --}}
+    @include(
+        'frontend.gallery.sections.video-showcase'
+    )
+
 
     {{-- CATEGORY FILTER --}}
     @include(
@@ -50,10 +55,7 @@
         'frontend.gallery.sections.gallery-grid'
     )
 
-    {{-- VIDEO SHOWCASE --}}
-    @include(
-        'frontend.gallery.sections.video-showcase'
-    )
+
 
 
     {{-- CTA --}}

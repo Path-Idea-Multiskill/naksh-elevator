@@ -51,6 +51,10 @@
 ) }}" type="video/mp4">
                         </video>
 
+                        <div class="gallery-video-card__watermark">
+                            <img src="{{ asset('images/logo/naksh-logo.png') }}" alt="" aria-hidden="true">
+                        </div>
+
                         <span class="gallery-video-card__number">
                             01
                         </span>
@@ -93,6 +97,10 @@
 ) }}" type="video/mp4">
                         </video>
 
+                        <div class="gallery-video-card__watermark">
+                            <img src="{{ asset('images/logo/naksh-logo.png') }}" alt="" aria-hidden="true">
+                        </div>
+
                         <span class="gallery-video-card__number">
                             02
                         </span>
@@ -134,6 +142,10 @@
     'videos/open-lift-door.mp4'
 ) }}" type="video/mp4">
                         </video>
+
+                        <div class="gallery-video-card__watermark">
+                            <img src="{{ asset('images/logo/naksh-logo.png') }}" alt="" aria-hidden="true">
+                        </div>
 
                         <span class="gallery-video-card__number">
                             03
@@ -181,6 +193,10 @@
                             04
                         </span>
 
+                        <div class="gallery-video-card__watermark">
+                            <img src="{{ asset('images/logo/naksh-logo.png') }}" alt="" aria-hidden="true">
+                        </div>
+
                         <span class="gallery-video-card__tag">
                             CABIN CONTROLS
                         </span>
@@ -223,6 +239,10 @@
                             05
                         </span>
 
+                        <div class="gallery-video-card__watermark">
+                            <img src="{{ asset('images/logo/naksh-logo.png') }}" alt="" aria-hidden="true">
+                        </div>
+
                         <span class="gallery-video-card__tag">
                             DESIGNER DOORS
                         </span>
@@ -260,6 +280,10 @@
     'videos/glass-elevator-door.mp4'
 ) }}" type="video/mp4">
                         </video>
+
+                        <div class="gallery-video-card__watermark">
+                            <img src="{{ asset('images/logo/naksh-logo.png') }}" alt="" aria-hidden="true">
+                        </div>
 
                         <span class="gallery-video-card__number">
                             06
