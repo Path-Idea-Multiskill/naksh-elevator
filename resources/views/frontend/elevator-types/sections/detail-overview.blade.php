@@ -12,16 +12,16 @@
 
                     @if($elevatorType->image)
 
-                        <img
-                            src="{{
-                                asset(
-                                    'storage/' .
-                                    $elevatorType->image
-                                )
-                            }}"
-                            alt="{{ $elevatorType->name }}"
-                            class="et-overview__image"
-                        >
+                                    <img src="{{
+                        asset(
+                            'storage/' .
+                            $elevatorType->image
+                        )
+                                            }}" alt="{{ $elevatorType->name }}" class="et-overview__image">
+
+                                    <div class="et-image-watermark et-image-watermark--overview">
+                                        <img src="{{ asset('images/logo/naksh-logo.png') }}" alt="" aria-hidden="true">
+                                    </div>
 
                     @else
 
@@ -74,7 +74,7 @@
 
                 <h2>
                     {{
-                        $elevatorType->name
+    $elevatorType->name
                     }}
                     Solutions
                 </h2>
@@ -84,18 +84,18 @@
 
                     @if($elevatorType->description)
 
-                        {!! nl2br(
+                                        {!! nl2br(
                             e($elevatorType->description)
                         ) !!}
 
                     @elseif($elevatorType->short_description)
 
-                        <p>
-                            {{
-                                $elevatorType
-                                    ->short_description
-                            }}
-                        </p>
+                                    <p>
+                                        {{
+                        $elevatorType
+                            ->short_description
+                                            }}
+                                    </p>
 
                     @else
 

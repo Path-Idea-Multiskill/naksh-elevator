@@ -1,153 +1,140 @@
 @if($relatedElevatorTypes->isNotEmpty())
 
-<section class="et-related">
+    <section class="et-related">
 
-    <div class="site-container">
+        <div class="site-container">
 
 
-        <div class="et-related__heading">
+            <div class="et-related__heading">
 
-            <div>
+                <div>
 
-                <div class="et-related__eyebrow">
-                    <span></span>
-                    EXPLORE MORE
+                    <div class="et-related__eyebrow">
+                        <span></span>
+                        EXPLORE MORE
+                    </div>
+
+                    <h2>
+                        Other Elevator
+                        Solutions
+                    </h2>
+
                 </div>
 
-                <h2>
-                    Other Elevator
-                    Solutions
-                </h2>
+
+                <a href="{{
+            route('elevator-types.index')
+                    }}" class="et-related__all">
+                    View All
+                    <span>→</span>
+                </a>
 
             </div>
 
 
-            <a
-                href="{{
-                    route('elevator-types.index')
-                }}"
-                class="et-related__all"
-            >
-                View All
-                <span>→</span>
-            </a>
+            <div class="et-related__grid">
 
-        </div>
+                @foreach(
+                        $relatedElevatorTypes as $relatedType
+                    )
+
+                    <article class="et-related-card">
 
 
-        <div class="et-related__grid">
+                        <a href="{{
+                    route(
+                        'elevator-types.show',
+                        $relatedType->slug
+                    )
+                                }}" class="et-related-card__visual">
 
-            @foreach(
-                $relatedElevatorTypes as $relatedType
-            )
+                            @if($relatedType->image)
 
-                <article class="et-related-card">
-
-
-                    <a
-                        href="{{
-                            route(
-                                'elevator-types.show',
-                                $relatedType->slug
-                            )
-                        }}"
-                        class="et-related-card__visual"
-                    >
-
-                        @if($relatedType->image)
-
-                            <img
-                                src="{{
-                                    asset(
-                                        'storage/' .
-                                        $relatedType->image
-                                    )
-                                }}"
-                                alt="{{
-                                    $relatedType->name
-                                }}"
-                                loading="lazy"
-                            >
-
-                        @else
-
-                            <div
-                                class="
-                                    et-related-card__placeholder
-                                "
-                            >
-                                <span>↕</span>
-                            </div>
-
-                        @endif
-
-                    </a>
-
-
-                    <div class="et-related-card__body">
-
-                        <span>
-                            ELEVATOR SOLUTION
-                        </span>
-
-                        <h3>
-
-                            <a
-                                href="{{
-                                    route(
-                                        'elevator-types.show',
-                                        $relatedType->slug
-                                    )
-                                }}"
-                            >
-                                {{
-                                    $relatedType->name
-                                }}
-                            </a>
-
-                        </h3>
-
-
-                        @if(
-                            $relatedType
-                                ->short_description
-                        )
-
-                            <p>
-                                {{
-                                    $relatedType
-                                        ->short_description
-                                }}
-                            </p>
-
-                        @endif
-
-
-                        <a
-                            href="{{
-                                route(
-                                    'elevator-types.show',
-                                    $relatedType->slug
+                                    <img src="{{
+                                asset(
+                                    'storage/' .
+                                    $relatedType->image
                                 )
-                            }}"
-                            class="
-                                et-related-card__link
-                            "
-                        >
-                            Explore
-                            <span>→</span>
+                                                }}" alt="{{
+                                $relatedType->name
+                                                }}" loading="lazy">
+
+                                    <div class="et-image-watermark et-image-watermark--related">
+                                        <img src="{{ asset('images/logo/naksh-logo.png') }}" alt="" aria-hidden="true">
+                                    </div>
+
+                            @else
+
+                                <div class="
+                                                et-related-card__placeholder
+                                            ">
+                                    <span>↕</span>
+                                </div>
+
+                            @endif
+
                         </a>
 
-                    </div>
 
-                </article>
+                        <div class="et-related-card__body">
 
-            @endforeach
+                            <span>
+                                ELEVATOR SOLUTION
+                            </span>
+
+                            <h3>
+
+                                <a href="{{
+                    route(
+                        'elevator-types.show',
+                        $relatedType->slug
+                    )
+                                        }}">
+                                    {{
+                    $relatedType->name
+                                        }}
+                                </a>
+
+                            </h3>
+
+
+                            @if(
+                                        $relatedType
+                                            ->short_description
+                                    )
+
+                                    <p>
+                                        {{
+                                $relatedType
+                                    ->short_description
+                                                }}
+                                    </p>
+
+                            @endif
+
+
+                            <a href="{{
+                    route(
+                        'elevator-types.show',
+                        $relatedType->slug
+                    )
+                                    }}" class="
+                                        et-related-card__link
+                                    ">
+                                Explore
+                                <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                @endforeach
+
+            </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 @endif

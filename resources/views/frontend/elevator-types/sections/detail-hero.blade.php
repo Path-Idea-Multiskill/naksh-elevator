@@ -76,6 +76,11 @@
                         'storage/' . $elevatorType->image
                     ) }}" alt="{{ $elevatorType->name }}">
 
+                                    {{-- NAKSH ELEVATOR WATERMARK --}}
+                                    <div class="et-image-watermark et-image-watermark--hero">
+                                        <img src="{{ asset('images/logo/naksh-logo.png') }}" alt="" aria-hidden="true">
+                                    </div>
+
                                     <div class="et-detail-hero__photo-shade"></div>
 
                                     <div class="et-detail-hero__photo-info">
