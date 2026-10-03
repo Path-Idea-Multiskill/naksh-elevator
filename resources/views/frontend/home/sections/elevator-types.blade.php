@@ -86,6 +86,15 @@
                                             $elevator->image
                                         ) }}" alt="{{ $elevator->name }}" loading="lazy">
 
+                                        {{-- NAKSH ELEVATOR WATERMARK --}}
+                                       <div class="home-elevators__watermark">
+                                          <img
+                                              src="{{ asset('images/logo/naksh-logo.png') }}"
+                                              alt=""
+                                              aria-hidden="true"
+                                          >
+                                       </div>
+
                                     @else
 
                                         <div class="home-elevators__placeholder">

@@ -20,8 +20,7 @@
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.15fr)
-        minmax(280px, .85fr);
+        minmax(0, 1.15fr) minmax(280px, .85fr);
 
     align-items: end;
 
@@ -216,14 +215,64 @@
         filter .35s ease;
 }
 
+/* =========================================================
+   ELEVATOR IMAGE WATERMARK
+========================================================= */
 
-.home-elevators__card:hover
-.home-elevators__image img {
+.home-elevators__watermark {
+    position: absolute;
+
+    right: 14px;
+    bottom: 14px;
+
+    z-index: 3;
+
+    width: clamp(82px, 8vw, 112px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 9px;
+
+    border-radius: 7px;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.12);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    opacity: 0.78;
+
+    pointer-events: none;
+}
+
+.home-elevators__watermark img {
+    width: 100%;
+    height: auto;
+
+    max-height: 34px;
+
+    display: block;
+
+    object-fit: contain;
+
+    /* Prevent main image hover rules affecting logo */
+    transform: none !important;
+    filter: none !important;
+
+    transition: none;
+}
+
+
+.home-elevators__card:hover .home-elevators__image>img {
     transform: scale(1.035);
 
     filter:
-        saturate(1.03)
-        contrast(1.015);
+        saturate(1.03) contrast(1.015);
 }
 
 
@@ -245,11 +294,9 @@
         var(--naksh-navy);
 
     background:
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             #f8fafc,
-            #edf3f9
-        );
+            #edf3f9);
 }
 
 
@@ -306,11 +353,9 @@
         box-shadow .35s ease;
 }
 
-.home-elevators__card:hover
-.home-elevators__number {
+.home-elevators__card:hover .home-elevators__number {
     transform:
-        translateY(-2px)
-        rotate(5deg);
+        translateY(-2px) rotate(5deg);
 
     box-shadow:
         0 8px 20px rgba(247, 147, 0, .27);
@@ -457,7 +502,7 @@
 }
 
 
-.home-elevators__empty > span {
+.home-elevators__empty>span {
     color:
         var(--naksh-orange);
 
@@ -510,10 +555,17 @@
 
     .home-elevators__grid {
         grid-template-columns:
-            repeat(
-                2,
-                minmax(0, 1fr)
-            );
+            repeat(2,
+                minmax(0, 1fr));
+    }
+
+    .home-elevators__watermark {
+        right: 12px;
+        bottom: 12px;
+
+        width: 100px;
+
+        padding: 5px 8px;
     }
 }
 
@@ -537,11 +589,9 @@
 
     .home-elevators__heading h2 {
         font-size:
-            clamp(
-                29px,
+            clamp(29px,
                 9vw,
-                39px
-            );
+                39px);
     }
 
 
@@ -565,6 +615,23 @@
     .home-elevators__view-all {
         width: 100%;
     }
+
+    .home-elevators__watermark {
+        right: 11px;
+        bottom: 11px;
+
+        width: 92px;
+
+        padding: 5px 7px;
+
+        border-radius: 6px;
+
+        opacity: 0.76;
+    }
+
+    .home-elevators__watermark img {
+        max-height: 29px;
+    }
 }
 
 
@@ -582,6 +649,19 @@
     .home-elevators__content {
         padding:
             17px 16px 18px;
+    }
+
+    .home-elevators__watermark {
+        right: 9px;
+        bottom: 9px;
+
+        width: 82px;
+
+        padding: 4px 6px;
+    }
+
+    .home-elevators__watermark img {
+        max-height: 26px;
     }
 }
 
@@ -602,8 +682,7 @@
 }
 
 
-.home-elevators__card:hover
-.home-elevators__content h3 {
+.home-elevators__card:hover .home-elevators__content h3 {
     color:
         var(--naksh-navy-light);
 }
@@ -677,4 +756,3 @@
     transform:
         translateX(5px);
 }
-
