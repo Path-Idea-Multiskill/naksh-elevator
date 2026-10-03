@@ -73,10 +73,7 @@
     border-radius: 64px 0 0 64px;
 
     filter:
-        drop-shadow(
-            0 5px 12px
-            rgba(0, 0, 0, .15)
-        );
+        drop-shadow(0 5px 12px rgba(0, 0, 0, .15));
 }
 
 .site-footer-company p,
@@ -257,4 +254,16 @@
         width: 170px;
         max-width: 100%;
     }
+}
+
+.footer-phone-numbers {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.footer-phone-numbers a {
+    display: inline-block;
+    white-space: nowrap;
 }

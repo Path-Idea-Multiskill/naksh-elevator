@@ -93,9 +93,9 @@
                 @foreach($footerElevatorTypes as $type)
 
                     <!-- <li> -->
-                        <a href="{{ route('elevator-types.show', $type->slug) }}">
-                            {{ $type->name }}
-                        </a>
+                    <a href="{{ route('elevator-types.show', $type->slug) }}">
+                        {{ $type->name }}
+                    </a>
                     <!-- </li> -->
 
                 @endforeach
@@ -111,7 +111,7 @@
                 </h3>
 
 
-                @if($settings?->primary_phone)
+                <!-- @if($settings?->primary_phone)
 
                             <a href="tel:{{
                     preg_replace(
@@ -122,6 +122,46 @@
                                                                         }}">
                                 {{ $settings->primary_phone }}
                             </a>
+
+                @endif -->
+
+                @if($settings?->primary_phone || $settings?->secondary_phone)
+
+                    <div class="footer-phone-numbers">
+
+                        @if($settings?->primary_phone)
+
+                                    <a href="tel:{{
+                            preg_replace(
+                                '/[^0-9+]/',
+                                '',
+                                $settings->primary_phone
+                            )
+                            }}">
+                                        {{ $settings->primary_phone }}
+                                    </a>
+
+                        @endif
+
+                        @if($settings?->primary_phone && $settings?->secondary_phone)
+                            <span>,</span>
+                        @endif
+
+                        @if($settings?->secondary_phone)
+
+                                    <a href="tel:{{
+                            preg_replace(
+                                '/[^0-9+]/',
+                                '',
+                                $settings->secondary_phone
+                            )
+                            }}">
+                                        {{ $settings->secondary_phone }}
+                                    </a>
+
+                        @endif
+
+                    </div>
 
                 @endif
 
